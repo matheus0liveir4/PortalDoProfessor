@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
+    --cor-primaria: #0d6efd;
     --primary-blue: #007bff;
     --text-dark: #343a40;
     --text-body: #555;
@@ -22,6 +23,7 @@ body {
     background-color: var(--white);
     color: var(--text-dark);
 }
+.btn-moodle { background-color: var(--cor-primaria); color: white;}
 
 .container {
     max-width: 1200px;

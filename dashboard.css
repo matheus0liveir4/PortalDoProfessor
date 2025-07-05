@@ -127,11 +127,8 @@
         }
 
         /* --- Componentes do Header --- */
-        .header-actions {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
+
+        
 
         .user-info {
             font-weight: 500;
