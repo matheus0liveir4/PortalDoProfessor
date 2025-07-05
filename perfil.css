@@ -1,0 +1,96 @@
+/* ... (todo o CSS anterior permanece igual até a seção de botões) ... */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --cor-primaria: #0d6efd;
+    --cor-sucesso: #198754; /* Nova cor para o botão Salvar */
+    --cor-fundo: #f8f9fa;
+    --cor-fundo-card: #ffffff;
+    --cor-texto-principal: #343a40;
+    --cor-texto-secundario: #6c757d;
+    --cor-borda: #dee2e6;
+    --cor-fundo-input: #e9ecef;
+    --cor-vermelho-badge: #dc3545;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Poppins', sans-serif; background-color: var(--cor-fundo); color: var(--cor-texto-principal); display: flex; }
+.sidebar { width: 280px; background-color: var(--cor-fundo-card); height: 100vh; position: fixed; top: 0; left: 0; border-right: 1px solid var(--cor-borda); padding: 20px; display: flex; flex-direction: column; }
+.sidebar-header { display: flex; align-items: center; gap: 10px; padding: 10px; margin-bottom: 20px; }
+.sidebar-header i { font-size: 24px; color: var(--cor-primaria); }
+.sidebar-header h1 { font-size: 18px; font-weight: 600; }
+.sidebar-nav p { font-size: 12px; text-transform: uppercase; color: var(--cor-texto-secundario); font-weight: 600; margin: 20px 0 10px 10px; }
+.sidebar-nav ul { list-style: none; }
+.sidebar-nav ul li a { display: flex; align-items: center; padding: 12px 15px; text-decoration: none; color: var(--cor-texto-secundario); font-weight: 500; border-radius: 8px; margin-bottom: 5px; transition: background-color 0.3s, color 0.3s; }
+.sidebar-nav ul li a:hover { background-color: var(--cor-fundo-input); }
+.sidebar-nav ul li a.active { background-color: var(--cor-primaria); color: white; }
+.sidebar-nav ul li a i { width: 30px; text-align: center; font-size: 16px; margin-right: 10px; }
+.badge { margin-left: auto; background-color: var(--cor-vermelho-badge); color: white; font-size: 12px; width: 20px; height: 20px; border-radius: 50%; display: flex; justify-content: center; align-items: center; }
+.main-content { margin-left: 280px; width: calc(100% - 280px); display: flex; flex-direction: column; }
+.top-bar { background-color: var(--cor-fundo-card); border-bottom: 1px solid var(--cor-borda); padding: 15px 30px; display: flex; justify-content: flex-end; align-items: center; gap: 20px; }
+.user-info { font-weight: 500; }
+.header-actions { display: flex; gap: 10px; }
+.btn { padding: 10px 20px; border: none; border-radius: 8px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background-color 0.3s, opacity 0.3s; }
+.btn:hover { opacity: 0.9; }
+.btn-primary { background-color: var(--cor-primaria); color: white; }
+.btn-secondary { background-color: var(--cor-fundo-input); color: var(--cor-texto-principal); }
+.btn-success { background-color: var(--cor-sucesso); color: white; } /* Estilo para o botão "Salvar" */
+.content-area { padding: 30px; }
+.profile-card { background-color: var(--cor-fundo-card); border-radius: 12px; padding: 30px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+.card-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--cor-borda); padding-bottom: 20px; margin-bottom: 30px; }
+.card-header h2 { font-size: 24px; font-weight: 600; }
+.card-header a { text-decoration: none; color: var(--cor-texto-secundario); font-size: 14px; }
+.card-body { display: flex; gap: 40px; }
+.profile-left { flex: 0 0 200px; }
+.profile-picture { width: 180px; height: 180px; border-radius: 50%; overflow: hidden; margin-bottom: 30px; }
+.profile-picture img { width: 100%; height: 100%; object-fit: cover; }
+.contact-info h3, .basic-info h3, .social-media h3 { font-size: 18px; font-weight: 600; margin-bottom: 20px; }
+label { display: block; font-size: 14px; color: var(--cor-texto-secundario); margin-bottom: 8px; }
+
+
+
+/* --- NOVO E ALTERADO: Estilos para os campos de formulário --- */
+
+/* Estilo base para todos os inputs e textarea */
+.profile-input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid transparent; /* Borda transparente por padrão */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+textarea.profile-input {
+    min-height: 200px;
+    resize: vertical; /* Permite que o usuário redimensione a altura */
+}
+
+/* Estado DESABILITADO (aparência inicial) */
+.profile-input:disabled {
+    background-color: var(--cor-fundo-input);
+    color: var(--cor-texto-principal);
+    cursor: default; /* Remove o cursor de "não permitido" */
+    -webkit-text-fill-color: var(--cor-texto-principal); /* Corrige cor do texto no Safari */
+    opacity: 1; /* Garante que não fique esmaecido */
+}
+
+/* Estado HABILITADO (quando "Editar" é clicado) */
+.profile-input:not(:disabled) {
+    background-color: var(--cor-fundo-card); /* Fundo branco */
+    border-color: var(--cor-borda); /* Borda visível */
+}
+
+/* Estado de FOCO (quando o usuário está digitando) */
+.profile-input:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25);
+}
+
+
+/* --- Resto do CSS --- */
+.profile-right { flex-grow: 1; position: relative; }
+.edit-button { position: absolute; top: -15px; right: 0; }
+.info-field { margin-bottom: 20px; }
+.social-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }

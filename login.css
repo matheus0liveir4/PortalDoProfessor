@@ -1,0 +1,97 @@
+/* Reset e Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    /* Fundo cinza-azulado claro, como na imagem */
+    background-color: #d0dde9; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* O CARD DE LOGIN CENTRALIZADO E HORIZONTAL */
+.login-container {
+    background-color: #ffffff;
+    padding: 40px 50px; /* Mais padding nas laterais do que em cima/baixo para dar o formato */
+    border-radius: 16px; /* Bordas bem arredondadas */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 500px; /* Largura do card */
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+/* O GRANDE SEGREDO: RÓTULOS AO LADO DOS INPUTS */
+.input-group {
+    display: flex; /* Alinha o label e o input na mesma linha */
+    align-items: center; /* Centraliza verticalmente */
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    flex-basis: 80px; /* Largura fixa para o rótulo */
+    flex-shrink: 0; /* Impede que o rótulo encolha */
+    font-size: 16px;
+    color: #495057;
+    font-weight: 600;
+}
+
+.input-group input {
+    width: 100%; /* Ocupa o resto do espaço */
+    padding: 12px 15px;
+    border: 1px solid #ced4da; /* Borda cinza claro */
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Nunito', sans-serif;
+    transition: all 0.2s ease-in-out;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #007bff; /* Borda azul ao focar */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+/* BOTÃO DE ENTRAR, COMO NA IMAGEM */
+.login-button {
+    display: block;
+    width: 100%;
+    margin-top: 35px;
+    padding: 15px;
+    border: none;
+    /* Borda bem arredondada para o botão */
+    border-radius: 12px; 
+    background-color: #007bff; /* Azul vibrante */
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    /* Sombra mais pronunciada para o efeito "flutuante" */
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3); 
+    transition: all 0.3s ease;
+}
+
+.login-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.4);
+    background-color: #0069d9;
+}
+
+.login-button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}

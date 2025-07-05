@@ -1,0 +1,222 @@
+        /* --- Reset e Configurações Globais (Idêntico ao anterior) --- */
+        :root {
+            --primary-blue: #007bff;
+            --light-blue: #e7f3ff;
+            --text-dark: #333;
+            --text-light: #6c757d;
+            --bg-color: #f8f9fa;
+            --white: #ffffff;
+            --border-color: #dee2e6;
+            --shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F0F4F7; /* Cor de fundo principal */
+            color: var(--text-dark);
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* --- Estrutura Principal (Idêntico ao anterior) --- */
+        .container {
+            display: flex;
+            width: 100%;
+        }
+
+        .sidebar {
+            width: 260px;
+            background-color: var(--white);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            border-right: 1px solid #e9ecef;
+        }
+
+        .main-wrapper {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-header {
+            display: flex;
+            justify-content: space-between; /* Ajustado para o novo header da página */
+            align-items: center;
+            padding: 15px 30px;
+            background-color: var(--white);
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            padding: 30px;
+        }
+        
+        /* --- Componentes da Sidebar (Idêntico ao anterior) --- */
+        .sidebar-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-title .fa-user-tie { color: var(--primary-blue); }
+
+        .sidebar-nav ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            border-radius: 8px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .sidebar-nav a:hover { background-color: var(--light-blue); color: var(--primary-blue); }
+        .sidebar-nav a.active { background-color: var(--primary-blue); color: var(--white); }
+        .sidebar-nav a .nav-icon { width: 20px; margin-right: 15px; text-align: center; }
+        .notification-badge { margin-left: auto; background-color: #dc3545; color: var(--white); font-size: 0.75rem; font-weight: 600; width: 20px; height: 20px; border-radius: 50%; display: flex; justify-content: center; align-items: center; }
+
+        /* --- Componentes do Header (Idêntico ao anterior) --- */
+        .page-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .header-actions { display: flex; align-items: center; gap: 20px; }
+        .user-info { font-weight: 500; color: var(--text-light); }
+        .btn { padding: 8px 15px; border-radius: 6px; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; transition: opacity 0.3s; }
+        .btn:hover { opacity: 0.85; }
+        .btn-secondary { background-color: #e9ecef; color: var(--text-dark); }
+        .btn-primary { background-color: var(--primary-blue); color: var(--white); }
+        
+        /* 
+        ==================================================
+        === NOVOS ESTILOS PARA A PÁGINA DE BLOG ===
+        ==================================================
+        */
+        
+        .content-section {
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #e9ecef;
+            margin-bottom: 25px;
+        }
+        
+        .blog-grid-top {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr; /* Coluna do vídeo menor que a dos links */
+            gap: 25px;
+        }
+
+        .video-card {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .video-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .video-card h3 .fa-thumbtack {
+            color: #dc3545;
+        }
+        
+        .video-player-placeholder {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background-color: #333;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAM1BMVEX///8AAABEREQ+Pj4MDAylpaV5eXn5+fnu7u4/Pz/i4uLr6+tCQkKenp5ubm4SEhJEREZvLAVvAAABBUlEQVR4nO3dyQnCUBBFUYNsJd3/WKuIqETW6U52tnfCz38UAAAAAACgXw/tDbZ3emLp2W7TzG5bO0Ptzjod+tAOfdihD/vQh33Yhz7sQx/2YQ/6sA992Ic+7EMf9mEP+rAPfdiHPuxDH/ZhD/qwD33Yhz7sQx/2YQ/6sA992Id9+h168Ph4eN9n6C9Pfy9Pnz9/Xj693t7efrw+P3+e3t4+vx4fH+/d/u1v0MMP/y+HW/s/h/sHAAAAAAAAAAAAAAAAAPybHrQ32N5pS8+2m2Z229oZandapx16sA992Ic+7EMf9mEP+rAPfdiHPuxDH/ZhD/qwD33Yhz7sQx/2YQ/6sA992Ic+7EMf9mEP+rAPfdiHPuxDH/ZhD/qwD3/TDv34+HjYZ+hPT38vT58/f16e3t7efrw+P3+e3t4+vx4fH+/d/vVv0MM/+S8HAAAAAIB/9AYVfCEkHl2NzgAAAABJRU5ErkJggg==');
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+        }
+
+        .announcements-column {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .resource-card {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 20px 25px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: transform 0.2s;
+        }
+        .resource-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .resource-card i {
+            font-size: 1.2rem;
+        }
+
+        .resource-links-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        /* --- Responsividade --- */
+        @media (max-width: 1200px) {
+            .blog-grid-top {
+                grid-template-columns: 1fr; /* Stacks the video and announcements */
+            }
+        }
+        @media (max-width: 992px) {
+            .container { flex-direction: column; }
+            .sidebar { width: 100%; height: auto; flex-direction: row; align-items: center; justify-content: space-between; padding: 10px 20px; border-right: none; border-bottom: 1px solid #e9ecef; }
+            .sidebar-title { margin-bottom: 0; }
+            .sidebar-nav { display: none; }
+            .main-content { padding: 20px; }
+            .main-header { flex-direction: column; align-items: flex-start; gap: 10px;}
+        }
+        @media (max-width: 768px) {
+            .resource-links-grid {
+                grid-template-columns: 1fr; /* Stacks resource links */
+            }
+            .page-title {
+                font-size: 1.5rem;
+            }
+        }
+        @media (max-width: 576px) {
+            .header-actions { align-self: flex-end; }
+            .user-info { display: none; }
+        }
