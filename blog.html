@@ -9,12 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="blog.css">
-
+    
     <!-- Font Awesome (para os ícones) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    
+    <link rel="stylesheet" href="blog.css">
 </head>
 <body>
 
@@ -28,15 +27,15 @@
                 </h2>
                 
                 <nav class="sidebar-nav">
-                    <ul>
-                        <li><a href="dashboard.html" class="active"><i class="fas fa-tachometer-alt nav-icon"></i> <span>Dashboard</span></a></li>
-                        <li><a href="perfil.html"><i class="fas fa-user nav-icon"></i> <span>Perfil</span></a></li>
-                        <li><a href="blog.html"><i class="fas fa-blog nav-icon"></i> <span>Blog</span> <span class="notification-badge">0</span></a></li>
-                        <li><a href="materiais.html"><i class="fas fa-folder nav-icon"></i> <span>Materiais</span> <span class="notification-badge">0</span></a></li>
-                        <li><a href="agenda.html"><i class="fas fa-calendar-alt nav-icon"></i> <span>Agenda</span> <span class="notification-badge">0</span></a></li>
-                        <li><a href="portfolio.html"><i class="fas fa-briefcase nav-icon"></i> <span>Portfólio</span> <span class="notification-badge">0</span></a></li>
-                        <li><a href="contato.html"><i class="fas fa-envelope nav-icon"></i> <span>Contatos</span> <span class="notification-badge">0</span></a></li>
-                        <li><a href="sobre.html"><i class="fas fa-comments nav-icon"></i> <span>Sobre</span> <span class="notification-badge">0</span></a></li>
+                     <ul>
+                        <li><a href="#"><i class="fas fa-tachometer-alt nav-icon"></i> <span>Dashboard</span></a></li>
+                        <li><a href="#"><i class="fas fa-user nav-icon"></i> <span>Perfil</span></a></li>
+                        <li><a href="#" class="active"><i class="fas fa-blog nav-icon"></i> <span>Blog</span> <span class="notification-badge">0</span></a></li>
+                        <li><a href="#"><i class="fas fa-folder nav-icon"></i> <span>Materiais</span> <span class="notification-badge">0</span></a></li>
+                        <li><a href="#"><i class="fas fa-calendar-alt nav-icon"></i> <span>Agenda</span> <span class="notification-badge">0</span></a></li>
+                        <li><a href="#"><i class="fas fa-briefcase nav-icon"></i> <span>Portfólio</span> <span class="notification-badge">0</span></a></li>
+                        <li><a href="#"><i class="fas fa-envelope nav-icon"></i> <span>Contatos</span> <span class="notification-badge">0</span></a></li>
+                        <li><a href="#"><i class="fas fa-comments nav-icon"></i> <span>Comentários</span> <span class="notification-badge">0</span></a></li>
                     </ul>
                 </nav>
             </div>
@@ -45,10 +44,15 @@
         <!-- ======================= Conteúdo Principal ======================= -->
         <div class="main-wrapper">
             <header class="main-header">
-                <h1 class="page-title">
-                    <i class="fas fa-blog"></i>
-                    <span>Blog</span>
-                </h1>
+                <div class="header-title-wrapper">
+                    <h1 class="page-title">
+                        <i class="fas fa-blog"></i>
+                        <span>Blog</span>
+                    </h1>
+                    <button class="btn btn-primary btn-new-post">
+                        <i class="fas fa-plus"></i> Novo Post
+                    </button>
+                </div>
                 <div class="header-actions">
                     <span class="user-info">Professor</span>
                     <a href="#" class="btn btn-secondary">
@@ -69,14 +73,28 @@
                             <div class="video-player-placeholder" title="Clique para reproduzir"></div>
                         </div>
                         <div class="announcements-column">
-                            <a href="#" class="resource-card">
-                                <i class="fas fa-pencil-alt"></i>
-                                <span><strong>Atividade Prática</strong> - "Redesenhe uma tela de cadastro com foco em feedback do sistema e consistência visual."</span>
-                            </a>
-                            <a href="#" class="resource-card">
-                                <i class="fas fa-lightbulb"></i>
-                                <span><strong>Estudo de Caso</strong> - "O que torna a interface do Nubank tão intuitiva? Veja nosso estudo de caso."</span>
-                            </a>
+                            <!-- Card de post com botões de ação -->
+                            <div class="resource-card" data-id="1">
+                                <a href="#" class="resource-content">
+                                    <i class="fas fa-pencil-alt"></i>
+                                    <span><strong>Atividade Prática</strong> - "Redesenhe uma tela de cadastro com foco em feedback do sistema e consistência visual."</span>
+                                </a>
+                                <div class="resource-actions">
+                                    <button class="action-btn" title="Editar Post"><i class="fas fa-pen"></i></button>
+                                    <button class="action-btn" title="Apagar Post"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
+                             <!-- Card de post com botões de ação -->
+                            <div class="resource-card" data-id="2">
+                                <a href="#" class="resource-content">
+                                    <i class="fas fa-lightbulb"></i>
+                                    <span><strong>Estudo de Caso</strong> - "O que torna a interface do Nubank tão intuitiva? Veja nosso estudo de caso."</span>
+                                </a>
+                                <div class="resource-actions">
+                                    <button class="action-btn" title="Editar Post"><i class="fas fa-pen"></i></button>
+                                    <button class="action-btn" title="Apagar Post"><i class="fas fa-trash"></i></button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -84,28 +102,217 @@
                 <!-- Seção Inferior: Links de Recursos -->
                 <section class="content-section">
                     <div class="resource-links-grid">
-                        <a href="#" class="resource-card">
-                            <i class="fas fa-file-pdf"></i>
-                            <span>PDF: Slides da aula ou checklist de usabilidade</span>
-                        </a>
-                        <a href="#" class="resource-card">
-                            <i class="fas fa-link"></i>
-                            <span>Link para Figma, Adobe XD ou Balsamiq</span>
-                        </a>
-                        <a href="#" class="resource-card">
-                            <i class="fas fa-book-open"></i>
-                            <span>Biblioteca de Componentes UI</span>
-                        </a>
-                        <a href="#" class="resource-card">
-                            <i class="fas fa-mobile-alt"></i>
-                            <span>Exemplos de UI Mobile Responsiva</span>
-                        </a>
+                        <!-- Card de post com botões de ação -->
+                        <div class="resource-card" data-id="3">
+                           <a href="#" class="resource-content">
+                                <i class="fas fa-file-pdf"></i>
+                                <span><strong>PDF: Slides da aula</strong> - "ou checklist de usabilidade"</span>
+                           </a>
+                           <div class="resource-actions">
+                               <button class="action-btn" title="Editar Post"><i class="fas fa-pen"></i></button>
+                               <button class="action-btn" title="Apagar Post"><i class="fas fa-trash"></i></button>
+                           </div>
+                        </div>
+                        <!-- Card de post com botões de ação -->
+                        <div class="resource-card" data-id="4">
+                           <a href="#" class="resource-content">
+                                <i class="fas fa-link"></i>
+                                <span><strong>Link para Figma</strong> - "Adobe XD ou Balsamiq"</span>
+                           </a>
+                            <div class="resource-actions">
+                               <button class="action-btn" title="Editar Post"><i class="fas fa-pen"></i></button>
+                               <button class="action-btn" title="Apagar Post"><i class="fas fa-trash"></i></button>
+                           </div>
+                        </div>
+                        <!-- Card de post com botões de ação -->
+                        <div class="resource-card" data-id="5">
+                            <a href="#" class="resource-content">
+                                <i class="fas fa-book-open"></i>
+                                <span><strong>Biblioteca de Componentes</strong> - "UI"</span>
+                            </a>
+                           <div class="resource-actions">
+                               <button class="action-btn" title="Editar Post"><i class="fas fa-pen"></i></button>
+                               <button class="action-btn" title="Apagar Post"><i class="fas fa-trash"></i></button>
+                           </div>
+                        </div>
+                        <!-- Card de post com botões de ação -->
+                        <div class="resource-card" data-id="6">
+                            <a href="#" class="resource-content">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span><strong>Exemplos de UI</strong> - "Mobile Responsiva"</span>
+                            </a>
+                            <div class="resource-actions">
+                               <button class="action-btn" title="Editar Post"><i class="fas fa-pen"></i></button>
+                               <button class="action-btn" title="Apagar Post"><i class="fas fa-trash"></i></button>
+                           </div>
+                        </div>
                     </div>
                 </section>
 
             </main>
         </div>
     </div>
+    
+    <!-- ======================= MODAL PARA CRIAR/EDITAR POST (INICIA OCULTO) ======================= -->
+    <div class="modal-overlay hidden" id="post-modal">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2 id="modal-title">Criar Novo Post</h2>
+                <button class="close-modal-btn" title="Fechar">×</button>
+            </header>
+            <div class="modal-body">
+                <form id="post-form" class="post-form">
+                    <input type="hidden" id="post-id"> <!-- Para saber se estamos editando -->
+                    <div class="form-group">
+                        <label for="post-title-input">Título do Post</label>
+                        <input type="text" id="post-title-input" name="post-title" placeholder="Ex: Estudo de Caso do Nubank" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="post-description-input">Descrição</label>
+                        <textarea id="post-description-input" name="post-description" rows="4" placeholder="Ex: O que torna a interface tão intuitiva? Veja nosso estudo de caso." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="post-icon-input">Ícone (Font Awesome)</label>
+                        <select id="post-icon-input" name="post-icon">
+                            <option value="fas fa-lightbulb">Ideia (lâmpada)</option>
+                            <option value="fas fa-pencil-alt">Atividade (lápis)</option>
+                            <option value="fas fa-file-pdf">PDF</option>
+                            <option value="fas fa-link">Link</option>
+                            <option value="fas fa-book-open">Biblioteca</option>
+                            <option value="fas fa-mobile-alt">Mobile</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <footer class="modal-footer">
+                <button class="btn btn-secondary" id="cancel-btn">Cancelar</button>
+                <button class="btn btn-primary" id="save-btn">Salvar Post</button>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // --- Seleção de Elementos do DOM ---
+        const newPostBtn = document.querySelector('.btn-new-post');
+        const modal = document.getElementById('post-modal');
+        const closeModalBtn = modal.querySelector('.close-modal-btn');
+        const cancelBtn = modal.querySelector('#cancel-btn');
+        const modalTitle = modal.querySelector('#modal-title');
+        const postForm = document.getElementById('post-form');
+        const saveBtn = modal.querySelector('#save-btn');
+        const mainContent = document.querySelector('.main-content');
+
+        // --- Funções do Modal ---
+        const openModal = () => modal.classList.remove('hidden');
+        const closeModal = () => {
+            modal.classList.add('hidden');
+            postForm.reset(); // Limpa o formulário
+            postForm.querySelector('#post-id').value = ''; // Limpa o ID escondido
+        };
+
+        // --- Abrir Modal para CRIAR um novo post ---
+        newPostBtn.addEventListener('click', () => {
+            modalTitle.textContent = 'Criar Novo Post';
+            openModal();
+        });
+
+        // --- Fechar o Modal ---
+        closeModalBtn.addEventListener('click', closeModal);
+        cancelBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // --- Lógica de Ações nos Cards (Editar e Apagar) ---
+        mainContent.addEventListener('click', (e) => {
+            const actionButton = e.target.closest('.action-btn');
+            if (!actionButton) return;
+
+            const card = actionButton.closest('.resource-card');
+
+            // --- Lógica para APAGAR ---
+            if (actionButton.title.includes('Apagar')) {
+                const userIsSure = confirm('Você tem certeza que deseja apagar este post? Esta ação não pode ser desfeita.');
+                if (userIsSure) {
+                    card.style.transition = 'opacity 0.3s, transform 0.3s';
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.9)';
+                    setTimeout(() => card.remove(), 300);
+                }
+            }
+
+            // --- Lógica para EDITAR ---
+            if (actionButton.title.includes('Editar')) {
+                const cardTitle = card.querySelector('.resource-content strong').textContent.trim();
+                const cardDescription = card.querySelector('.resource-content span').lastChild.textContent.replace(/-/g, '').trim().replace(/"/g, '');
+                const cardIconClass = card.querySelector('.resource-content i').className;
+                
+                modalTitle.textContent = 'Editar Post';
+                postForm.querySelector('#post-id').value = card.dataset.id;
+                postForm.querySelector('#post-title-input').value = cardTitle;
+                postForm.querySelector('#post-description-input').value = cardDescription;
+
+                const iconSelect = postForm.querySelector('#post-icon-input');
+                Array.from(iconSelect.options).forEach(option => {
+                    if (cardIconClass.includes(option.value)) {
+                        option.selected = true;
+                    }
+                });
+
+                openModal();
+            }
+        });
+
+        // --- Lógica para SALVAR (criação e edição) ---
+        saveBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            const postId = postForm.querySelector('#post-id').value;
+            const title = postForm.querySelector('#post-title-input').value;
+            const description = postForm.querySelector('#post-description-input').value;
+            const iconClass = postForm.querySelector('#post-icon-input').value;
+
+            if (!title || !description) {
+                alert('Por favor, preencha o título e a descrição.');
+                return;
+            }
+
+            if (postId) {
+                // EDITANDO post existente
+                const cardToUpdate = document.querySelector(`[data-id='${postId}']`);
+                if (cardToUpdate) {
+                    cardToUpdate.querySelector('.resource-content strong').textContent = title;
+                    cardToUpdate.querySelector('.resource-content span').lastChild.textContent = ` - "${description}"`;
+                    cardToUpdate.querySelector('.resource-content i').className = iconClass;
+                }
+            } else {
+                // CRIANDO novo post
+                const announcementsColumn = document.querySelector('.announcements-column');
+                if (announcementsColumn) {
+                    const newCardHTML = `
+                        <div class="resource-card" data-id="${Date.now()}">
+                            <a href="#" class="resource-content">
+                                <i class="${iconClass}"></i>
+                                <span><strong>${title}</strong> - "${description}"</span>
+                            </a>
+                            <div class="resource-actions">
+                                <button class="action-btn" title="Editar Post"><i class="fas fa-pen"></i></button>
+                                <button class="action-btn" title="Apagar Post"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>`;
+                    announcementsColumn.insertAdjacentHTML('beforeend', newCardHTML);
+                }
+            }
+
+            closeModal();
+        });
+
+    });
+    </script>
 
 </body>
 </html>
