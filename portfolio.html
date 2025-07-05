@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio de Projetos - Portal do Professor</title>
-    <link rel="stylesheet" href="materiais.css">
+    <link rel="stylesheet" href="portfolio.css">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -15,28 +20,17 @@
             <div class="logo"><a href="#">Portal do Professor</a></div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="dashboard.html">Dashboard</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="materiais.html" class="active">Materiais</a></li>
-                     <li><a href="agenda.html">Agenda</a></li>
-                    <li><a href="portfolio.html">Portfólio</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Materiais</a></li>
+                     <li><a href="#">Agenda</a></li>
+                    <li><a href="#" class="active">Portfólio</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Sobre</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
                 <a href="#" class="btn btn-moodle"><i class="fa-solid fa-graduation-cap"></i> Moodle</a>
-            </div>
-        </div>
-        <div class="sub-nav">
-            <div class="container sub-nav-container">
-                <div>
-                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-                    <a href="#"><i class="fa-solid fa-user-shield"></i> Admin</a>
-                </div>
-                <div class="user-profile-icon">
-                    <img src="https://i.imgur.com/rS1xGj5.jpg" alt="Foto do Usuário">
-                </div>
             </div>
         </div>
     </header>
@@ -47,10 +41,9 @@
                 <!-- Coluna Esquerda: Resumo (Sticky) -->
                 <aside class="portfolio-summary">
                     <ul>
-                        <li><a href="#"><i class="fa-solid fa-flask"></i> Projetos de Pesquisa <span class="count">2</span></a></li>
-                        <li><a href="#"><i class="fa-solid fa-chalkboard-teacher"></i> Projetos de Ensino <span class="count">2</span></a></li>
-                        <li><a href="#"><i class="fa-solid fa-hands-helping"></i> Projetos de Extensão <span class="count">2</span></a></li>
-                        <li><a href="#"><i class="fa-solid fa-book-journal-whills"></i> Publicações <span class="count">5</span></a></li>
+                        <li><a href="#pesquisa"><i class="fa-solid fa-flask"></i> Projetos de Pesquisa <span class="count" data-count-for="pesquisa">2</span></a></li>
+                        <li><a href="#ensino"><i class="fa-solid fa-chalkboard-teacher"></i> Projetos de Ensino <span class="count" data-count-for="ensino">1</span></a></li>
+                        <li><a href="#extensao"><i class="fa-solid fa-hands-helping"></i> Projetos de Extensão <span class="count" data-count-for="extensao">1</span></a></li>
                     </ul>
                 </aside>
 
@@ -58,112 +51,154 @@
                 <div class="portfolio-content">
                     <div class="page-header">
                         <h1><i class="fa-solid fa-briefcase"></i> Portfólio de Projetos</h1>
-                        <p>Conheça os projetos de pesquisa, ensino e extensão desenvolvidos.</p>
+                        <p>Conheça e gerencie os projetos de pesquisa, ensino e extensão desenvolvidos.</p>
+                        <button class="btn btn-add-project"><i class="fa-solid fa-plus"></i> Adicionar Novo Projeto</button>
                     </div>
-
-                    <div class="filter-tabs">
-                        <a href="#" class="tab-link active" data-filter="todos">Todos</a>
-                        <a href="#" class="tab-link" data-filter="pesquisa">Pesquisa</a>
-                        <a href="#" class="tab-link" data-filter="ensino">Ensino</a>
-                        <a href="#" class="tab-link" data-filter="extensao">Extensão</a>
-                        <a href="#" class="tab-link" data-filter="publicacoes">Publicações</a>
-                    </div>
-
-                    <!-- Seção de Pesquisa -->
-                    <section class="project-section" data-category="pesquisa">
-                        <h2><i class="fa-solid fa-flask"></i> Projetos de Pesquisa</h2>
-                        <div class="project-list">
-                            <article class="project-item">
-                                <div class="timeline"><div class="dot"></div></div>
-                                <div class="project-details">
-                                    <a href="#" class="btn btn-details"><i class="fa-solid fa-eye"></i> Ver Detalhes</a>
-                                    <span class="status-badge status-concluido">Pesquisa Concluída</span>
-                                    <h3>Metodologias Ativas no Ensino Superior</h3>
-                                    <p>Investigação sobre a eficácia das metodologias ativas na aprendizagem de estudantes universitários.</p>
-                                    <div class="tags">
-                                        <span>Educação</span><span>Pedagogia</span><span>Pesquisa Qualitativa</span>
-                                    </div>
-                                    <div class="meta-info">
-                                        <span><i class="fa-solid fa-calendar-alt"></i> 2022 - 2024</span>
-                                        <a href="#"><i class="fa-solid fa-external-link-alt"></i></a>
-                                    </div>
-                                </div>
-                            </article>
-                            <article class="project-item">
-                                <div class="timeline"><div class="dot"></div></div>
-                                <div class="project-details">
-                                    <a href="#" class="btn btn-details"><i class="fa-solid fa-eye"></i> Ver Detalhes</a>
-                                    <span class="status-badge status-andamento">Pesquisa Em Andamento</span>
-                                    <h3>Integração de Tecnologias Digitais</h3>
-                                    <p>Estudo sobre o impacto das ferramentas digitais na educação pós-pandemia.</p>
-                                    <div class="tags">
-                                        <span>Tecnologia</span><span>Educação Digital</span><span>COVID-19</span>
-                                    </div>
-                                    <div class="meta-info">
-                                        <span><i class="fa-solid fa-calendar-alt"></i> 2023 - 2025</span>
-                                        <a href="#"><i class="fa-solid fa-external-link-alt"></i></a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                    </section>
-
-                    <!-- Seção de Ensino -->
-                    <section class="project-section" data-category="ensino">
-                        <h2><i class="fa-solid fa-chalkboard-teacher"></i> Projetos de Ensino</h2>
-                        <div class="project-list">
-                           <article class="project-item">
-                                <div class="timeline"><div class="dot"></div></div>
-                                <div class="project-details">
-                                    <a href="#" class="btn btn-details"><i class="fa-solid fa-eye"></i> Ver Detalhes</a>
-                                    <span class="status-badge status-concluido">Ensino Concluído</span>
-                                    <h3>Curso Online: Didática Moderna</h3>
-                                    <p>Desenvolvimento de curso EAD sobre metodologias contemporâneas de ensino.</p>
-                                    <div class="tags"><span>EAD</span><span>Moodle</span><span>Videoaulas</span></div>
-                                    <div class="meta-info">
-                                        <span><i class="fa-solid fa-calendar-alt"></i> 2023</span>
-                                        <a href="#"><i class="fa-solid fa-external-link-alt"></i></a>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>
-                    </section>
                     
-                    <!-- Seção de Extensão -->
-                    <section class="project-section" data-category="extensao">
-                        <h2><i class="fa-solid fa-hands-helping"></i> Projetos de Extensão</h2>
-                        <div class="project-list">
-                           <article class="project-item">
-                                <div class="timeline"><div class="dot"></div></div>
-                                <div class="project-details">
-                                    <a href="#" class="btn btn-details"><i class="fa-solid fa-eye"></i> Ver Detalhes</a>
-                                    <span class="status-badge status-andamento">Extensão Em Andamento</span>
-                                    <h3>Apoio à Comunidade Escolar</h3>
-                                    <p>Projeto de suporte pedagógico para escolas em situação de vulnerabilidade.</p>
-                                    <div class="tags"><span>Social</span><span>Voluntariado</span><span>Inclusão</span></div>
-                                    <div class="meta-info">
-                                        <span><i class="fa-solid fa-calendar-alt"></i> 2024 - 2025</span>
-                                        <a href="#"><i class="fa-solid fa-external-link-alt"></i></a>
+                    <div id="project-sections-container">
+                        <!-- Seção de Pesquisa -->
+                        <section class="project-section" id="pesquisa" data-category="pesquisa">
+                            <h2><i class="fa-solid fa-flask"></i> Projetos de Pesquisa</h2>
+                            <div class="project-list">
+                                <article class="project-item" data-id="1">
+                                    <div class="timeline"><div class="dot"></div></div>
+                                    <div class="project-details">
+                                        <div class="project-actions">
+                                            <button class="btn-icon btn-edit" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                                            <button class="btn-icon btn-delete" title="Apagar"><i class="fa-solid fa-trash"></i></button>
+                                        </div>
+                                        <span class="status-badge status-concluido">Pesquisa Concluída</span>
+                                        <h3>Metodologias Ativas no Ensino Superior</h3>
+                                        <p>Investigação sobre a eficácia das metodologias ativas na aprendizagem de estudantes universitários.</p>
+                                        <div class="tags"><span>Educação</span><span>Pedagogia</span><span>Pesquisa Qualitativa</span></div>
+                                        <div class="meta-info"><span><i class="fa-solid fa-calendar-alt"></i> 2022 - 2024</span><a href="#"><i class="fa-solid fa-external-link-alt"></i></a></div>
                                     </div>
-                                </div>
-                            </article>
-                        </div>
-                    </section>
+                                </article>
+                                <article class="project-item" data-id="2">
+                                    <div class="timeline"><div class="dot"></div></div>
+                                    <div class="project-details">
+                                        <div class="project-actions">
+                                            <button class="btn-icon btn-edit" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                                            <button class="btn-icon btn-delete" title="Apagar"><i class="fa-solid fa-trash"></i></button>
+                                        </div>
+                                        <span class="status-badge status-andamento">Pesquisa Em Andamento</span>
+                                        <h3>Integração de Tecnologias Digitais</h3>
+                                        <p>Estudo sobre o impacto das ferramentas digitais na educação pós-pandemia.</p>
+                                        <div class="tags"><span>Tecnologia</span><span>Educação Digital</span><span>COVID-19</span></div>
+                                        <div class="meta-info"><span><i class="fa-solid fa-calendar-alt"></i> 2023 - 2025</span><a href="#"><i class="fa-solid fa-external-link-alt"></i></a></div>
+                                    </div>
+                                </article>
+                            </div>
+                        </section>
 
+                        <!-- Seção de Ensino -->
+                        <section class="project-section" id="ensino" data-category="ensino">
+                            <h2><i class="fa-solid fa-chalkboard-teacher"></i> Projetos de Ensino</h2>
+                            <div class="project-list">
+                               <article class="project-item" data-id="3">
+                                    <div class="timeline"><div class="dot"></div></div>
+                                    <div class="project-details">
+                                        <div class="project-actions">
+                                            <button class="btn-icon btn-edit" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                                            <button class="btn-icon btn-delete" title="Apagar"><i class="fa-solid fa-trash"></i></button>
+                                        </div>
+                                        <span class="status-badge status-concluido">Ensino Concluído</span>
+                                        <h3>Curso Online: Didática Moderna</h3>
+                                        <p>Desenvolvimento de curso EAD sobre metodologias contemporâneas de ensino.</p>
+                                        <div class="tags"><span>EAD</span><span>Moodle</span><span>Videoaulas</span></div>
+                                        <div class="meta-info"><span><i class="fa-solid fa-calendar-alt"></i> 2023</span><a href="#"><i class="fa-solid fa-external-link-alt"></i></a></div>
+                                    </div>
+                                </article>
+                            </div>
+                        </section>
+                        
+                        <!-- Seção de Extensão -->
+                        <section class="project-section" id="extensao" data-category="extensao">
+                            <h2><i class="fa-solid fa-hands-helping"></i> Projetos de Extensão</h2>
+                            <div class="project-list">
+                               <article class="project-item" data-id="4">
+                                    <div class="timeline"><div class="dot"></div></div>
+                                    <div class="project-details">
+                                        <div class="project-actions">
+                                            <button class="btn-icon btn-edit" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                                            <button class="btn-icon btn-delete" title="Apagar"><i class="fa-solid fa-trash"></i></button>
+                                        </div>
+                                        <span class="status-badge status-andamento">Extensão Em Andamento</span>
+                                        <h3>Apoio à Comunidade Escolar</h3>
+                                        <p>Projeto de suporte pedagógico para escolas em situação de vulnerabilidade.</p>
+                                        <div class="tags"><span>Social</span><span>Voluntariado</span><span>Inclusão</span></div>
+                                        <div class="meta-info"><span><i class="fa-solid fa-calendar-alt"></i> 2024 - 2025</span><a href="#"><i class="fa-solid fa-external-link-alt"></i></a></div>
+                                    </div>
+                                </article>
+                            </div>
+                        </section>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Rodapé (Reutilizado da página anterior) -->
+    <!-- Rodapé -->
     <footer class="site-footer">
-        <div class="container footer-container">
-            <!-- Colunas do rodapé aqui -->
-        </div>
         <div class="copyright">
             <div class="container">© 2024 Portal do Professor. Todos os direitos reservados.</div>
         </div>
     </footer>
+
+    <!-- ======================= MODAL PARA ADICIONAR/EDITAR PROJETO ======================= -->
+    <div class="modal-overlay hidden" id="project-modal">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2 id="modal-title">Adicionar Novo Projeto</h2>
+                <button class="close-modal-btn" title="Fechar">×</button>
+            </header>
+            <form id="project-form">
+                <input type="hidden" id="project-id">
+                <div class="form-group">
+                    <label for="project-title">Título do Projeto</label>
+                    <input type="text" id="project-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="project-description">Descrição</label>
+                    <textarea id="project-description" rows="4" required></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="project-category">Categoria</label>
+                        <select id="project-category" required>
+                            <option value="pesquisa">Pesquisa</option>
+                            <option value="ensino">Ensino</option>
+                            <option value="extensao">Extensão</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="project-status">Status</label>
+                        <select id="project-status" required>
+                            <option value="andamento">Em Andamento</option>
+                            <option value="concluido">Concluído</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="project-tags">Tags (separadas por vírgula)</label>
+                    <input type="text" id="project-tags" placeholder="Educação, Pedagogia, Pesquisa">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="project-period">Período</label>
+                        <input type="text" id="project-period" placeholder="2024 - 2025" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="project-link">Link Externo (opcional)</label>
+                        <input type="url" id="project-link" placeholder="https://...">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-save">Salvar Projeto</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <script src="portfolio.js"></script>
 </body>

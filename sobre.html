@@ -3,145 +3,166 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre - Portal do Professor</title>
-    <link rel="stylesheet" href="materiais.css">
+    <title>Sobre Mim - Portal do Professor</title>
+    <link rel="stylesheet" href="sobre.css">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Cabeçalho (Reutilizado, com link "Sobre" ativo) -->
+    <!-- Cabeçalho -->
     <header class="site-header">
         <div class="container header-container">
             <div class="logo"><a href="#">Portal do Professor</a></div>
             <nav class="main-nav">
-                <u>
-                    <li><a href="dashboard.html">Dashboard</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="materiais.html" class="active">Materiais</a></li>
-                     <li><a href="agenda.html">Agenda</a></li>
-                    <li><a href="portfolio.html">Portfólio</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Materiais</a></li>
+                    <li><a href="#">Agenda</a></li>
+                    <li><a href="#">Portfólio</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#" class="active">Sobre</a></li>
                 </ul>
             </nav>
             <div class="header-actions">
                 <a href="#" class="btn btn-moodle"><i class="fa-solid fa-graduation-cap"></i> Moodle</a>
             </div>
         </div>
-        <div class="sub-nav">
-            <div class="container sub-nav-container">
-                <div>
-                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-                    <a href="#"><i class="fa-solid fa-user-shield"></i> Admin</a>
-                </div>
-                <div class="user-profile-icon">
-                    <img src="https://i.imgur.com/gKwgJkE.png" alt="Foto do Usuário">
-                </div>
-            </div>
-        </div>
     </header>
 
     <main class="main-content">
-        <div class="container about-container">
+        <div class="container">
+            <div class="portfolio-layout">
+                <!-- Coluna Esquerda: Navegação (Sticky) -->
+                <aside class="profile-nav-summary">
+                    <ul>
+                        <li><a href="#perfil"><i class="fa-solid fa-user"></i> Sobre Mim</a></li>
+                        <li><a href="#formacao"><i class="fa-solid fa-graduation-cap"></i> Formação</a></li>
+                        <li><a href="#pesquisa"><i class="fa-solid fa-flask"></i> Projetos de Pesquisa</a></li>
+                        <li><a href="#ensino"><i class="fa-solid fa-chalkboard-teacher"></i> Projetos de Ensino</a></li>
+                        <li><a href="#extensao"><i class="fa-solid fa-hands-helping"></i> Projetos de Extensão</a></li>
+                        <li><a href="#interesses"><i class="fa-solid fa-star"></i> Áreas de Interesse</a></li>
+                    </ul>
+                </aside>
 
-            <!-- Cabeçalho do Perfil -->
-            <header class="profile-header">
-                <h1>Professor</h1>
-                <h2>Educador e Pesquisador</h2>
-                <p>Carregando informações do professor...</p>
-                <a href="mailto:professor@email.com" class="btn btn-contact"><i class="fa-solid fa-envelope"></i> Contato por Email</a>
-            </header>
+                <!-- Coluna Direita: Conteúdo do Perfil -->
+                <div class="portfolio-content">
+                    <section id="perfil" class="profile-header">
+                        <img src="https://i.imgur.com/rS1xGj5.jpg" alt="Foto do Professor" class="profile-photo">
+                        <h1>Dr. Nome do Professor</h1>
+                        <h2>Professor Doutor em Educação e Tecnologias Digitais</h2>
+                        <p class="profile-bio">
+                            Bem-vindo ao meu espaço digital. Sou um educador apaixonado por inovação pedagógica e pela integração de novas tecnologias no processo de ensino-aprendizagem. Minha missão é capacitar futuros professores e transformar a educação através de metodologias ativas e colaborativas.
+                        </p>
+                    </section>
 
-            <!-- Seção de Formação Acadêmica -->
-            <section class="content-section">
-                <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Formação Acadêmica</h2>
-                <div class="info-block">
-                    <h3>Doutorado em Educação</h3>
-                    <h4>Universidade Federal - 2018</h4>
-                    <p>Tese: "Inovações Pedagógicas no Ensino Superior"</p>
-                </div>
-                <div class="info-block">
-                    <h3>Mestrado em Pedagogia</h3>
-                    <h4>Universidade Estadual - 2014</h4>
-                    <p>Dissertação: "Metodologias Ativas de Aprendizagem"</p>
-                </div>
-                 <div class="info-block">
-                    <h3>Graduação em Licenciatura</h3>
-                    <h4>Instituto de Educação - 2012</h4>
-                    <p>Especialização em Didática e Metodologia</p>
-                </div>
-            </section>
+                    <section class="content-section" id="formacao">
+                        <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i>Formação Acadêmica</h2>
+                        <div class="info-block">
+                            <h3>Doutorado em Educação</h3>
+                            <h4>Universidade Federal de Exemplo (UFE), 2018 - 2022</h4>
+                        </div>
+                        <div class="info-block">
+                            <h3>Mestrado em Tecnologias da Informação</h3>
+                            <h4>Instituto de Tecnologia Avançada (ITA), 2016 - 2018</h4>
+                        </div>
+                    </section>
+                    
+                    <!-- Seção de Pesquisa -->
+                    <section class="project-section" id="pesquisa" data-category="pesquisa">
+                        <h2 class="section-title"><i class="fa-solid fa-flask"></i> Projetos de Pesquisa</h2>
+                        <div class="project-list">
+                            <article class="project-item">
+                                <div class="timeline"><div class="dot"></div></div>
+                                <div class="project-details">
+                                    <span class="status-badge status-concluido">Pesquisa Concluída</span>
+                                    <h3>Metodologias Ativas no Ensino Superior</h3>
+                                    <p>Investigação sobre a eficácia das metodologias ativas na aprendizagem de estudantes universitários.</p>
+                                    <div class="tags"><span>Educação</span><span>Pedagogia</span><span>Pesquisa Qualitativa</span></div>
+                                    <div class="meta-info"><span><i class="fa-solid fa-calendar-alt"></i> 2022 - 2024</span><a href="#"><i class="fa-solid fa-external-link-alt"></i></a></div>
+                                </div>
+                            </article>
+                            <article class="project-item">
+                                <div class="timeline"><div class="dot"></div></div>
+                                <div class="project-details">
+                                    <span class="status-badge status-andamento">Pesquisa Em Andamento</span>
+                                    <h3>Integração de Tecnologias Digitais</h3>
+                                    <p>Estudo sobre o impacto das ferramentas digitais na educação pós-pandemia.</p>
+                                    <div class="tags"><span>Tecnologia</span><span>Educação Digital</span><span>COVID-19</span></div>
+                                    <div class="meta-info"><span><i class="fa-solid fa-calendar-alt"></i> 2023 - 2025</span><a href="#"><i class="fa-solid fa-external-link-alt"></i></a></div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
 
-            <!-- Seção de Experiência Profissional -->
-            <section class="content-section">
-                <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Experiência Profissional</h2>
-                <div class="info-block">
-                    <h3>Professor Titular</h3>
-                    <h4>Universidade Federal - 2019 até hoje</h4>
-                    <p>Responsável por disciplinas de graduação e pós-graduação</p>
-                </div>
-                <div class="info-block">
-                    <h3>Professor Adjunto</h3>
-                    <h4>Instituto de Ensino Superior - 2015-2019</h4>
-                    <p>Coordenação de projetos de extensão universitária</p>
-                </div>
-                <div class="info-block">
-                    <h3>Pesquisador</h3>
-                    <h4>Centro de Pesquisa Educacional - 2013-2015</h4>
-                    <p>Desenvolvimento de metodologias inovadoras</p>
-                </div>
-            </section>
-            
-            <!-- Seção de Áreas de Interesse -->
-            <section class="content-section">
-                <h2 class="section-title"><i class="fa-solid fa-lightbulb"></i> Áreas de Interesse</h2>
-                <ul class="interest-list">
-                    <li>Metodologias Ativas</li>
-                    <li>Tecnologia Educacional</li>
-                    <li>Avaliação Formativa</li>
-                    <li>Ensino Híbrido</li>
-                    <li>Pedagogia Digital</li>
-                    <li>Inovação Pedagógica</li>
-                </ul>
-            </section>
+                    <!-- Seção de Ensino -->
+                    <section class="project-section" id="ensino" data-category="ensino">
+                        <h2 class="section-title"><i class="fa-solid fa-chalkboard-teacher"></i> Projetos de Ensino</h2>
+                        <div class="project-list">
+                           <article class="project-item">
+                                <div class="timeline"><div class="dot"></div></div>
+                                <div class="project-details">
+                                    <span class="status-badge status-concluido">Ensino Concluído</span>
+                                    <h3>Curso Online: Didática Moderna</h3>
+                                    <p>Desenvolvimento de curso EAD sobre metodologias contemporâneas de ensino.</p>
+                                    <div class="tags"><span>EAD</span><span>Moodle</span><span>Videoaulas</span></div>
+                                    <div class="meta-info"><span><i class="fa-solid fa-calendar-alt"></i> 2023</span><a href="#"><i class="fa-solid fa-external-link-alt"></i></a></div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                    
+                    <!-- Seção de Extensão -->
+                    <section class="project-section" id="extensao" data-category="extensao">
+                        <h2 class="section-title"><i class="fa-solid fa-hands-helping"></i> Projetos de Extensão</h2>
+                        <div class="project-list">
+                           <article class="project-item">
+                                <div class="timeline"><div class="dot"></div></div>
+                                <div class="project-details">
+                                    <span class="status-badge status-andamento">Extensão Em Andamento</span>
+                                    <h3>Apoio à Comunidade Escolar</h3>
+                                    <p>Projeto de suporte pedagógico para escolas em situação de vulnerabilidade.</p>
+                                    <div class="tags"><span>Social</span><span>Voluntariado</span><span>Inclusão</span></div>
+                                    <div class="meta-info"><span><i class="fa-solid fa-calendar-alt"></i> 2024 - 2025</span><a href="#"><i class="fa-solid fa-external-link-alt"></i></a></div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
 
-             <!-- Seção de Publicações Recentes -->
-            <section class="content-section">
-                <h2 class="section-title"><i class="fa-solid fa-book-journal-whills"></i> Publicações Recentes</h2>
-                <div class="publication-item">
-                    <h3>"Transformação Digital na Educação"</h3>
-                    <p>Revista Brasileira de Educação - 2024</p>
-                    <a href="#"><i class="fa-solid fa-external-link-alt"></i> Ver publicação</a>
-                </div>
-                <div class="publication-item">
-                    <h3>"Metodologias Ativas: Teoria e Prática"</h3>
-                    <p>Editora Universitária - 2023</p>
-                    <a href="#"><i class="fa-solid fa-external-link-alt"></i> Ver publicação</a>
-                </div>
-            </section>
+                    <section class="content-section" id="interesses">
+                        <h2 class="section-title"><i class="fa-solid fa-star"></i>Áreas de Interesse</h2>
+                        <ul class="interest-list">
+                            <li>Metodologias Ativas de Aprendizagem</li>
+                            <li>Tecnologias Educacionais Emergentes</li>
+                            <li>Design Instrucional para EAD</li>
+                            <li>Gamificação na Educação</li>
+                            <li>Avaliação Formativa</li>
+                            <li>Inclusão Digital</li>
+                        </ul>
+                    </section>
 
-            <!-- Seção de Colaboração -->
-            <section class="cta-box">
-                <h2>Interessado em colaborar?</h2>
-                <p>Entre em contato para discutir projetos de pesquisa, parcerias acadêmicas ou oportunidades de colaboração.</p>
-                <div class="cta-buttons">
-                    <a href="#" class="btn btn-main"><i class="fa-solid fa-paper-plane"></i> Entrar em Contato</a>
-                    <a href="#" class="btn btn-secondary"><i class="fa-solid fa-briefcase"></i> Ver Projetos</a>
+                    <div class="cta-box">
+                        <h2>Vamos Colaborar?</h2>
+                        <p>Estou sempre aberto a novas parcerias de pesquisa, projetos de extensão e oportunidades de colaboração. Se você tem uma ideia ou gostaria de discutir algum dos meus trabalhos, entre em contato.</p>
+                        <a href="#" class="btn btn-main"><i class="fa-solid fa-envelope"></i> Enviar um E-mail</a>
+                    </div>
                 </div>
-            </section>
-
+            </div>
         </div>
     </main>
 
-    <!-- Rodapé (Reutilizado da página anterior) -->
+    <!-- Rodapé -->
     <footer class="site-footer">
-        <div class="container footer-container">
-            <!-- Colunas do rodapé aqui -->
-        </div>
         <div class="copyright">
             <div class="container">© 2024 Portal do Professor. Todos os direitos reservados.</div>
         </div>
     </footer>
 
+    <script src="sobre.js"></script>
 </body>
 </html>
