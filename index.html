@@ -16,17 +16,26 @@
     <div class="login-container">
         <h1>Login</h1>
         
-        <div class="input-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email">
-        </div>
-        <div class="input-group">
-            <label for="senha">Senha</label>
-            <input type="password" id="senha" name="senha">
-        </div>
+        <!-- CORREÇÃO 1: Adicionar a tag <form> -->
+        <form id="login-form">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+            
+            <!-- CORREÇÃO 2: Usar um <button type="submit"> -->
+            <button type="submit" class="login-button">Entrar</button>
+        </form>
         
-        <a href="dashboard.html" class="login-button">Entrar</a>
+        <!-- Mensagem de erro que será preenchida pelo JS -->
+        <p id="error-message" style="color: red; text-align: center; margin-top: 10px;"></p>
     </div>
+
+<script src="login.js"></script>
 
 </body>
 </html>
