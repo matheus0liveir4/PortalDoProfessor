@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
+     --cor-primaria: #0d6efd;
     --primary-purple: #007bff;
     --dark-bg: #212529;
     --light-bg: #f8f9fa;
@@ -24,7 +25,7 @@ body {
     justify-content: center;
     padding: 2rem 0;
 }
-
+.btn-moodle { background-color: var(--cor-primaria); color: white; }
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
 }
