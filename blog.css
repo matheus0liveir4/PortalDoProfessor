@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* --- Reset e Configurações Globais --- */
 :root {
     --primary-blue: #007bff;
@@ -9,6 +10,20 @@
     --border-color: #dee2e6;
     --shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
+=======
+        /* --- Reset e Configurações Globais (Idêntico ao anterior) --- */
+        :root {
+            --cor-primaria: #0d6efd;
+            --primary-blue: #007bff;
+            --light-blue: #e7f3ff;
+            --text-dark: #333;
+            --text-light: #6c757d;
+            --bg-color: #f8f9fa;
+            --white: #ffffff;
+            --border-color: #dee2e6;
+            --shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+>>>>>>> 3b079a011801ff239a838c0c08781aaa098005e2
 
 * {
     margin: 0;
@@ -24,6 +39,7 @@ body {
     min-height: 100vh;
 }
 
+<<<<<<< HEAD
 /* --- Estrutura Principal --- */
 .container {
     display: flex;
@@ -39,6 +55,23 @@ body {
     flex-shrink: 0;
     border-right: 1px solid #e9ecef;
 }
+=======
+        /* --- Estrutura Principal (Idêntico ao anterior) --- */
+        .container {
+            display: flex;
+            width: 100%;
+        }
+.btn-moodle { background-color: var(--cor-primaria); color: white; }
+        .sidebar {
+            width: 260px;
+            background-color: var(--white);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            border-right: 1px solid #e9ecef;
+        }
+>>>>>>> 3b079a011801ff239a838c0c08781aaa098005e2
 
 .main-wrapper {
     flex-grow: 1;

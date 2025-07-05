@@ -27,7 +27,7 @@
             justify-content: center;
             align-items: center;
         }
-
+.btn-moodle { background-color: var(--cor-primaria); color: white; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Poppins', sans-serif; background-color: var(--cor-fundo); color: var(--cor-texto-principal); display: flex; }
 .sidebar { width: 280px; background-color: var(--cor-fundo-card); height: 100vh; position: fixed; top: 0; left: 0; border-right: 1px solid var(--cor-borda); padding: 20px; display: flex; flex-direction: column; }
