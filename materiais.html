@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Materiais de Aula - Portal do Professor</title>
     <link rel="stylesheet" href="materiais.css">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -16,14 +21,15 @@
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="dashboard.html">Início</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="materiais.html" class="active">Materiais</a></li>
-                    <li><a href="agenda.html">Agenda</a></li>
+                     <li><a href="agenda.html">Agenda</a></li>
                     <li><a href="portfolio.html">Portfólio</a></li>
                     <li><a href="contato.html">Contato</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
                 </ul>
+
             </nav>
             <div class="header-actions">
                 <a href="#" class="btn btn-moodle">
@@ -49,7 +55,11 @@
             <!-- Título da Página -->
             <div class="page-header">
                 <h1><i class="fa-solid fa-folder-open"></i> Materiais de Aula</h1>
-                <p>Acesse slides, apostilas, exercícios e outros recursos educacionais</p>
+                <p>Acesse e gerencie slides, apostilas, exercícios e outros recursos</p>
+                <!-- Botão para Adicionar Material -->
+                <button class="btn btn-add-material">
+                    <i class="fa-solid fa-plus"></i> Adicionar Novo Material
+                </button>
             </div>
 
             <!-- Filtros de Categoria -->
@@ -61,190 +71,147 @@
                 <a href="#" class="tab-link" data-filter="videos">Vídeos</a>
                 <a href="#" class="tab-link" data-filter="outros">Outros</a>
             </div>
+            
+            <div class="materials-container">
+                <!-- Seção de Slides -->
+                <section class="material-section" data-category="slides">
+                    <h2><i class="fa-solid fa-chalkboard-user"></i> Slides de Aula</h2>
+                    <div class="material-grid">
+                        <article class="material-card" data-id="1">
+                            <div class="card-content">
+                                <h3>Introdução à Metodologias Ativas</h3>
+                                <p>Slides sobre conceitos fundamentais e aplicações práticas.</p>
+                                <div class="file-info">
+                                    <span>PowerPoint</span><span>2.5 MB</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-actions">
+                                    <button class="btn-icon btn-edit" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="btn-icon btn-delete" title="Apagar"><i class="fa-solid fa-trash"></i></button>
+                                </div>
+                                <a href="#" class="btn btn-download"><i class="fa-solid fa-download"></i> Download</a>
+                            </div>
+                        </article>
+                    </div>
+                </section>
 
-            <!-- Seção de Slides -->
-            <section class="material-section" data-category="slides">
-                <h2><i class="fa-solid fa-chalkboard-user"></i> Slides de Aula</h2>
-                <div class="material-grid">
-                    <article class="material-card">
-                        <div class="card-content">
-                            <h3>Introdução à Metodologias Ativas</h3>
-                            <p>Slides sobre conceitos fundamentais e aplicações práticas.</p>
-                            <div class="file-info">
-                                <span>PowerPoint</span><span>2.5 MB</span>
+                <!-- Seção de Apostilas -->
+                <section class="material-section" data-category="apostilas">
+                    <h2><i class="fa-solid fa-book-open"></i> Apostilas e Textos</h2>
+                    <div class="material-grid">
+                        <article class="material-card" data-id="2">
+                            <div class="card-content">
+                                <h3>Manual de Metodologias Ativas</h3>
+                                <p>Guia completo com teorias e práticas pedagógicas.</p>
+                                <div class="file-info">
+                                    <span>PDF</span><span>5.8 MB</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="card-actions">
+                            <div class="card-footer">
+                                <div class="card-actions">
+                                    <button class="btn-icon btn-edit" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="btn-icon btn-delete" title="Apagar"><i class="fa-solid fa-trash"></i></button>
+                                </div>
                                 <a href="#" class="btn btn-download"><i class="fa-solid fa-download"></i> Download</a>
-                                <a href="#" class="btn btn-view"><i class="fa-solid fa-eye"></i> Visualizar</a>
                             </div>
-                            <div class="card-stats">
-                                <i class="fa-solid fa-download"></i> 45
-                            </div>
-                        </div>
-                    </article>
-                    <article class="material-card">
-                        <div class="card-content">
-                            <h3>Avaliação Formativa</h3>
-                            <p>Estratégias e instrumentos de avaliação contínua.</p>
-                            <div class="file-info">
-                                <span>PowerPoint</span><span>3.1 MB</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                            <div class="card-actions">
-                                <a href="#" class="btn btn-download"><i class="fa-solid fa-download"></i> Download</a>
-                                <a href="#" class="btn btn-view"><i class="fa-solid fa-eye"></i> Visualizar</a>
-                            </div>
-                            <div class="card-stats">
-                                <i class="fa-solid fa-download"></i> 32
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </section>
+                        </article>
+                    </div>
+                </section>
 
-            <!-- Seção de Apostilas -->
-            <section class="material-section" data-category="apostilas">
-                <h2><i class="fa-solid fa-book-open"></i> Apostilas e Textos</h2>
-                <div class="material-grid">
-                    <article class="material-card">
-                        <div class="card-content">
-                            <h3>Manual de Metodologias Ativas</h3>
-                            <p>Guia completo com teorias e práticas pedagógicas.</p>
-                            <div class="file-info">
-                                <span>PDF</span><span>5.8 MB</span>
+                <!-- Seção de Exercícios -->
+                <section class="material-section" data-category="exercicios">
+                    <h2><i class="fa-solid fa-file-lines"></i> Exercícios e Atividades</h2>
+                    <div class="material-grid">
+                        <article class="material-card" data-id="3">
+                            <div class="card-content">
+                                <h3>Lista de Exercícios - Módulo 1</h3>
+                                <p>Atividades práticas sobre fundamentos pedagógicos.</p>
+                                <div class="file-info">
+                                    <span>Word</span><span>1.2 MB</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="card-footer">
-                           <div class="card-actions">
+                            <div class="card-footer">
+                                <div class="card-actions">
+                                    <button class="btn-icon btn-edit" title="Editar"><i class="fa-solid fa-pen"></i></button>
+                                    <button class="btn-icon btn-delete" title="Apagar"><i class="fa-solid fa-trash"></i></button>
+                                </div>
                                 <a href="#" class="btn btn-download"><i class="fa-solid fa-download"></i> Download</a>
-                                <a href="#" class="btn btn-view"><i class="fa-solid fa-eye"></i> Visualizar</a>
                             </div>
-                            <div class="card-stats">
-                                <i class="fa-solid fa-download"></i> 78
-                            </div>
-                        </div>
-                    </article>
-                    <article class="material-card">
-                         <div class="card-content">
-                            <h3>Tecnologias Educacionais</h3>
-                            <p>Integração de ferramentas digitais no ensino.</p>
-                            <div class="file-info">
-                                <span>PDF</span><span>4.2 MB</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                           <div class="card-actions">
-                                <a href="#" class="btn btn-download"><i class="fa-solid fa-download"></i> Download</a>
-                                <a href="#" class="btn btn-view"><i class="fa-solid fa-eye"></i> Visualizar</a>
-                            </div>
-                            <div class="card-stats">
-                                <i class="fa-solid fa-download"></i> 50
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </section>
+                        </article>
+                    </div>
+                </section>
 
-            <!-- Seção de Exercícios -->
-            <section class="material-section" data-category="exercicios">
-                <h2><i class="fa-solid fa-file-lines"></i> Exercícios e Atividades</h2>
-                <div class="material-grid">
-                    <article class="material-card">
-                        <div class="card-content">
-                            <h3>Lista de Exercícios - Módulo 1</h3>
-                            <p>Atividades práticas sobre fundamentos pedagógicos.</p>
-                            <div class="file-info">
-                                <span>Word</span><span>1.2 MB</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                           <div class="card-actions">
-                                <a href="#" class="btn btn-download"><i class="fa-solid fa-download"></i> Download</a>
-                                <a href="#" class="btn btn-view"><i class="fa-solid fa-eye"></i> Visualizar</a>
-                            </div>
-                            <div class="card-stats">
-                                <i class="fa-solid fa-download"></i> 89
-                            </div>
-                        </div>
-                    </article>
-                    <article class="material-card">
-                         <div class="card-content">
-                            <h3>Planilha de Avaliação</h3>
-                            <p>Template para acompanhamento de desempenho.</p>
-                            <div class="file-info">
-                                <span>Excel</span><span>0.8 MB</span>
-                            </div>
-                        </div>
-                        <div class="card-footer">
-                           <div class="card-actions">
-                                <a href="#" class="btn btn-download"><i class="fa-solid fa-download"></i> Download</a>
-                                <a href="#" class="btn btn-view"><i class="fa-solid fa-eye"></i> Visualizar</a>
-                            </div>
-                            <div class="card-stats">
-                                <i class="fa-solid fa-download"></i> 34
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </section>
-
-             <!-- Seção de Acesso Rápido -->
-            <aside class="quick-access">
-                <h2>Acesso Rápido</h2>
-                <ul>
-                    <li><a href="#"><strong>Slides</strong><span>Apresentações de aula</span></a></li>
-                    <li><a href="#"><strong>Apostilas</strong><span>Textos e manuais</span></a></li>
-                    <li><a href="#"><strong>Exercícios</strong><span>Atividades práticas</span></a></li>
-                    <li><a href="#"><strong>Vídeos</strong><span>Conteúdo audiovisual</span></a></li>
-                </ul>
-            </aside>
+                <!-- Seção de Vídeos (vazia por padrão) -->
+                <section class="material-section" data-category="videos">
+                    <h2><i class="fa-solid fa-video"></i> Vídeos</h2>
+                    <div class="material-grid"></div>
+                </section>
+                
+                <!-- Seção de Outros (vazia por padrão) -->
+                <section class="material-section" data-category="outros">
+                    <h2><i class="fa-solid fa-box-archive"></i> Outros</h2>
+                    <div class="material-grid"></div>
+                </section>
+            </div>
         </div>
     </main>
 
     <footer class="site-footer">
-        <div class="container footer-container">
-            <div class="footer-column">
-                <h4>Portal do Professor</h4>
-                <p>Seu espaço de aprendizado e conhecimento.</p>
-            </div>
-            <div class="footer-column">
-                <h4>Links Rápidos</h4>
-                <ul>
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#">Sobre</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Materiais</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Recursos</h4>
-                <ul>
-                    <li><a href="#">Agenda</a></li>
-                    <li><a href="#">Portfólio</a></li>
-                    <li><a href="#">Contato</a></li>
-                    <li><a href="#">Moodle</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Contato</h4>
-                <p>professor@email.com</p>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="copyright">
-            <div class="container">
-                © 2024 Portal do Professor. Todos os direitos reservados.
-            </div>
-        </div>
+        <!-- O conteúdo do seu rodapé permanece aqui -->
     </footer>
 
+    <!-- ======================= MODAL PARA ADICIONAR/EDITAR MATERIAL ======================= -->
+    <div class="modal-overlay hidden" id="material-modal">
+        <div class="modal-content">
+            <header class="modal-header">
+                <h2 id="modal-title">Adicionar Novo Material</h2>
+                <button class="close-modal-btn" title="Fechar">×</button>
+            </header>
+            <div class="modal-body">
+                <form id="material-form">
+                    <input type="hidden" id="material-id">
+                    <div class="form-group">
+                        <label for="material-title">Título do Material</label>
+                        <input type="text" id="material-title" placeholder="Ex: Slides da Aula 5" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="material-description">Descrição</label>
+                        <textarea id="material-description" rows="3" placeholder="Uma breve descrição sobre o conteúdo do material" required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="material-category">Categoria</label>
+                            <select id="material-category" required>
+                                <option value="slides">Slides</option>
+                                <option value="apostilas">Apostilas</option>
+                                <option value="exercicios">Exercícios</option>
+                                <option value="videos">Vídeos</option>
+                                <option value="outros">Outros</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="material-type">Tipo do Arquivo</label>
+                            <input type="text" id="material-type" placeholder="Ex: PDF, Word, Link" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="material-size">Tamanho</label>
+                            <input type="text" id="material-size" placeholder="Ex: 3.5 MB" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="material-link">Link para Download</label>
+                        <input type="url" id="material-link" placeholder="https://..." required>
+                    </div>
+                </form>
+            </div>
+            <footer class="modal-footer">
+                <button class="btn btn-cancel" id="cancel-btn">Cancelar</button>
+                <button class="btn btn-save" id="save-btn">Salvar Material</button>
+            </footer>
+        </div>
+    </div>
+    
     <script src="materiais.js"></script>
 </body>
 </html>
