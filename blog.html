@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel do Professor - Blog</title>
+    <title>O que torna a interface do Nubank tão intuitiva? - Blog</title>
     
     <!-- Google Fonts: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,302 +17,134 @@
 </head>
 <body>
 
-    <div class="container">
-        <!-- ======================= Sidebar (Menu "Blog" está ativo) ======================= -->
-        <aside class="sidebar">
-            <div>
-                <h2 class="sidebar-title">
-                    <i class="fas fa-user-tie"></i>
-                    <span>Painel do Professor</span>
-                </h2>
-                
-                <nav class="sidebar-nav">
-                     <ul>
-                        <li><a href="#"><i class="fas fa-tachometer-alt nav-icon"></i> <span>Dashboard</span></a></li>
-                        <li><a href="#"><i class="fas fa-user nav-icon"></i> <span>Perfil</span></a></li>
-                        <li><a href="#" class="active"><i class="fas fa-blog nav-icon"></i> <span>Blog</span> <span class="notification-badge">0</span></a></li>
-                        <li><a href="#"><i class="fas fa-folder nav-icon"></i> <span>Materiais</span> <span class="notification-badge">0</span></a></li>
-                        <li><a href="#"><i class="fas fa-calendar-alt nav-icon"></i> <span>Agenda</span> <span class="notification-badge">0</span></a></li>
-                        <li><a href="#"><i class="fas fa-briefcase nav-icon"></i> <span>Portfólio</span> <span class="notification-badge">0</span></a></li>
-                        <li><a href="#"><i class="fas fa-envelope nav-icon"></i> <span>Contatos</span> <span class="notification-badge">0</span></a></li>
-                        <li><a href="#"><i class="fas fa-comments nav-icon"></i> <span>Comentários</span> <span class="notification-badge">0</span></a></li>
-                    </ul>
-                </nav>
+    <!-- ======================= Cabeçalho Público ======================= -->
+    <header class="site-header">
+         <div class="container header-container">
+            <div class="logo"><a href="#">Portal do Professor</a></div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="blog_publico.html" class="active">Blog</a></li>
+                    <li><a href="#">Materiais</a></li>
+                    <li><a href="#">Agenda</a></li>
+                    <li><a href="#">Portfólio</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Sobre</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-moodle"><i class="fa-solid fa-graduation-cap"></i> Acessar Moodle</a>
             </div>
-        </aside>
+        </div>
+    </header>
 
-        <!-- ======================= Conteúdo Principal ======================= -->
-        <div class="main-wrapper">
-            <header class="main-header">
-                <div class="header-title-wrapper">
-                    <h1 class="page-title">
-                        <i class="fas fa-blog"></i>
-                        <span>Blog</span>
-                    </h1>
-                    <button class="btn btn-primary btn-new-post">
-                        <i class="fas fa-plus"></i> Novo Post
-                    </button>
+    <!-- ======================= Conteúdo do Post ======================= -->
+    <main class="page-wrapper">
+        <article class="single-post-container">
+            <!-- Cabeçalho do Artigo -->
+            <header class="post-header">
+                <div class="post-meta">
+                    <a href="#" class="meta-category">Estudo de Caso</a>
                 </div>
-                <div class="header-actions">
-                    <span class="user-info">Professor</span>
-                    <a href="#" class="btn btn-secondary">
-                        <i class="fas fa-sign-out-alt"></i> Sair
-                    </a>
-                    <a href="#" class="btn btn-primary">
-                        <i class="fas fa-edit"></i> Ver Site
-                    </a>
+                <h1>O que torna a interface do Nubank tão intuitiva?</h1>
+                <div class="post-meta-author">
+                    <img src="https://i.imgur.com/rS1xGj5.jpg" alt="Foto do Professor" class="author-photo">
+                    <span>Por <strong>Professor</strong> em 15 de Ago, 2023</span>
                 </div>
             </header>
 
-            <main class="main-content">
-                <!-- Seção Superior: Vídeo e Anúncios -->
-                <section class="content-section">
-                    <div class="blog-grid-top">
-                        <div class="video-card">
-                            <h3><i class="fas fa-thumbtack"></i> Sugestão de Vídeo:</h3>
-                            <div class="video-player-placeholder" title="Clique para reproduzir"></div>
-                        </div>
-                        <div class="announcements-column">
-                            <!-- Card de post com botões de ação -->
-                            <div class="resource-card" data-id="1">
-                                <a href="#" class="resource-content">
-                                    <i class="fas fa-pencil-alt"></i>
-                                    <span><strong>Atividade Prática</strong> - "Redesenhe uma tela de cadastro com foco em feedback do sistema e consistência visual."</span>
-                                </a>
-                                <div class="resource-actions">
-                                    <button class="action-btn" title="Editar Post"><i class="fas fa-pen"></i></button>
-                                    <button class="action-btn" title="Apagar Post"><i class="fas fa-trash"></i></button>
-                                </div>
-                            </div>
-                             <!-- Card de post com botões de ação -->
-                            <div class="resource-card" data-id="2">
-                                <a href="#" class="resource-content">
-                                    <i class="fas fa-lightbulb"></i>
-                                    <span><strong>Estudo de Caso</strong> - "O que torna a interface do Nubank tão intuitiva? Veja nosso estudo de caso."</span>
-                                </a>
-                                <div class="resource-actions">
-                                    <button class="action-btn" title="Editar Post"><i class="fas fa-pen"></i></button>
-                                    <button class="action-btn" title="Apagar Post"><i class="fas fa-trash"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                <!-- Seção Inferior: Links de Recursos -->
-                <section class="content-section">
-                    <div class="resource-links-grid">
-                        <!-- Card de post com botões de ação -->
-                        <div class="resource-card" data-id="3">
-                           <a href="#" class="resource-content">
-                                <i class="fas fa-file-pdf"></i>
-                                <span><strong>PDF: Slides da aula</strong> - "ou checklist de usabilidade"</span>
-                           </a>
-                           <div class="resource-actions">
-                               <button class="action-btn" title="Editar Post"><i class="fas fa-pen"></i></button>
-                               <button class="action-btn" title="Apagar Post"><i class="fas fa-trash"></i></button>
-                           </div>
-                        </div>
-                        <!-- Card de post com botões de ação -->
-                        <div class="resource-card" data-id="4">
-                           <a href="#" class="resource-content">
-                                <i class="fas fa-link"></i>
-                                <span><strong>Link para Figma</strong> - "Adobe XD ou Balsamiq"</span>
-                           </a>
-                            <div class="resource-actions">
-                               <button class="action-btn" title="Editar Post"><i class="fas fa-pen"></i></button>
-                               <button class="action-btn" title="Apagar Post"><i class="fas fa-trash"></i></button>
-                           </div>
-                        </div>
-                        <!-- Card de post com botões de ação -->
-                        <div class="resource-card" data-id="5">
-                            <a href="#" class="resource-content">
-                                <i class="fas fa-book-open"></i>
-                                <span><strong>Biblioteca de Componentes</strong> - "UI"</span>
-                            </a>
-                           <div class="resource-actions">
-                               <button class="action-btn" title="Editar Post"><i class="fas fa-pen"></i></button>
-                               <button class="action-btn" title="Apagar Post"><i class="fas fa-trash"></i></button>
-                           </div>
-                        </div>
-                        <!-- Card de post com botões de ação -->
-                        <div class="resource-card" data-id="6">
-                            <a href="#" class="resource-content">
-                                <i class="fas fa-mobile-alt"></i>
-                                <span><strong>Exemplos de UI</strong> - "Mobile Responsiva"</span>
-                            </a>
-                            <div class="resource-actions">
-                               <button class="action-btn" title="Editar Post"><i class="fas fa-pen"></i></button>
-                               <button class="action-btn" title="Apagar Post"><i class="fas fa-trash"></i></button>
-                           </div>
-                        </div>
-                    </div>
-                </section>
+            <!-- Imagem de Destaque -->
+            <figure class="post-featured-image">
+                <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Imagem do post sobre UI/UX">
+            </figure>
 
-            </main>
-        </div>
-    </div>
-    
-    <!-- ======================= MODAL PARA CRIAR/EDITAR POST (INICIA OCULTO) ======================= -->
-    <div class="modal-overlay hidden" id="post-modal">
-        <div class="modal-content">
-            <header class="modal-header">
-                <h2 id="modal-title">Criar Novo Post</h2>
-                <button class="close-modal-btn" title="Fechar">×</button>
-            </header>
-            <div class="modal-body">
-                <form id="post-form" class="post-form">
-                    <input type="hidden" id="post-id"> <!-- Para saber se estamos editando -->
-                    <div class="form-group">
-                        <label for="post-title-input">Título do Post</label>
-                        <input type="text" id="post-title-input" name="post-title" placeholder="Ex: Estudo de Caso do Nubank" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="post-description-input">Descrição</label>
-                        <textarea id="post-description-input" name="post-description" rows="4" placeholder="Ex: O que torna a interface tão intuitiva? Veja nosso estudo de caso." required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="post-icon-input">Ícone (Font Awesome)</label>
-                        <select id="post-icon-input" name="post-icon">
-                            <option value="fas fa-lightbulb">Ideia (lâmpada)</option>
-                            <option value="fas fa-pencil-alt">Atividade (lápis)</option>
-                            <option value="fas fa-file-pdf">PDF</option>
-                            <option value="fas fa-link">Link</option>
-                            <option value="fas fa-book-open">Biblioteca</option>
-                            <option value="fas fa-mobile-alt">Mobile</option>
-                        </select>
-                    </div>
-                </form>
+            <!-- Corpo do Post -->
+            <div class="post-body">
+                <p>A ascensão do Nubank no cenário financeiro brasileiro não se deve apenas a suas políticas de isenção de taxas, mas fundamentalmente à sua <strong>experiência de usuário (UX) exemplar</strong>. Em um setor tradicionalmente complexo e burocrático, o Nubank simplificou a interação bancária, tornando-a acessível e até mesmo agradável. Mas quais são os pilares que sustentam essa interface tão elogiada?</p>
+                
+                <h2>1. Minimalismo e Foco no Essencial</h2>
+                <p>Ao abrir o aplicativo, o usuário não é bombardeado com dezenas de opções. A tela principal exibe o que é mais importante: saldo, limite do cartão e as últimas transações. Essa abordagem minimalista reduz a carga cognitiva e permite que o usuário encontre o que precisa rapidamente, seguindo o princípio de design "menos é mais".</p>
+
+                <h2>2. Feedback Imediato e Claro</h2>
+                <p>Toda ação dentro do aplicativo gera um feedback visual ou tátil imediato. Uma compra é confirmada com uma notificação instantânea. Uma transferência é concluída com uma animação satisfatória. Esse ciclo de ação-reação constante constrói confiança e dá ao usuário a certeza de que suas operações foram bem-sucedidas.</p>
+                
+                <blockquote>
+                    "A melhor interface é aquela que não se percebe. Ela simplesmente funciona, guiando o usuário de forma natural ao seu objetivo."
+                </blockquote>
+
+                <h2>3. Linguagem Humana e Acessível</h2>
+                <p>O Nubank abandonou o "bancarês". Em vez de termos técnicos como "débito em conta corrente" ou "liquidação de fatura", o aplicativo usa uma linguagem simples e direta, como "pagar fatura" ou "transferir dinheiro". Essa comunicação empática remove barreiras e faz com que o usuário se sinta no controle e compreenda plenamente o que está fazendo.</p>
+                
+                <ul>
+                    <li><strong>Clareza:</strong> Sem jargões técnicos.</li>
+                    <li><strong>Consistência:</strong> Ícones e cores são usados de forma padronizada em todo o app.</li>
+                    <li><strong>Eficiência:</strong> As tarefas mais comuns exigem o mínimo de toques possível.</li>
+                </ul>
+
+                <h2>Conclusão</h2>
+                <p>A intuitividade da interface do Nubank é resultado de um projeto centrado no ser humano. Ao priorizar a simplicidade, fornecer feedback constante e falar a língua do seu público, o banco digital não apenas criou um produto eficiente, mas também estabeleceu um novo padrão de qualidade para o design de aplicativos financeiros.</p>
             </div>
-            <footer class="modal-footer">
-                <button class="btn btn-secondary" id="cancel-btn">Cancelar</button>
-                <button class="btn btn-primary" id="save-btn">Salvar Post</button>
-            </footer>
+
+            <!-- Seção de Comentários -->
+            <section class="comments-section">
+                <h3 class="section-title">2 Comentários</h3>
+                <div class="comment-list">
+                    <div class="comment">
+                        <img src="https://i.pravatar.cc/60?u=a042581f4e29026704d" alt="Foto de Maria Silva" class="comment-avatar">
+                        <div class="comment-content">
+                            <div class="comment-author"><strong>Maria Silva</strong> <span>- 16 de Ago, 2023</span></div>
+                            <p>Ótima análise! Realmente a simplicidade do Nubank é o que mais me atrai. Nunca me sinto perdida no aplicativo.</p>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <img src="https://i.pravatar.cc/60?u=a042581f4e29026704e" alt="Foto de João Pereira" class="comment-avatar">
+                        <div class="comment-content">
+                            <div class="comment-author"><strong>João Pereira</strong> <span>- 16 de Ago, 2023</span></div>
+                            <p>O ponto sobre o feedback imediato é crucial. A tranquilidade de receber a notificação da compra na mesma hora não tem preço.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comment-form-wrapper">
+                    <h3 class="section-title">Deixe um Comentário</h3>
+                    <form class="comment-form">
+                        <div class="form-row">
+                            <input type="text" placeholder="Seu Nome" required>
+                            <input type="email" placeholder="Seu E-mail" required>
+                        </div>
+                        <textarea rows="5" placeholder="Sua mensagem..." required></textarea>
+                        <button type="submit" class="btn btn-submit">Publicar Comentário</button>
+                    </form>
+                </div>
+            </section>
+        </article>
+        
+         <!-- Seção de Posts Relacionados -->
+        <section class="related-posts-section">
+            <div class="container">
+                <h2 class="section-title text-center">Você também pode gostar</h2>
+                <div class="related-posts-grid">
+                    <a href="#" class="related-post-card">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Imagem do post">
+                        <h4>Redesenhe uma tela de cadastro com foco em feedback</h4>
+                        <span>10 de Ago, 2023</span>
+                    </a>
+                    <a href="#" class="related-post-card">
+                        <img src="https://images.unsplash.com/photo-1587440871875-191322ee64b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" alt="Imagem do post">
+                        <h4>Comparativo: Figma, Adobe XD e Balsamiq</h4>
+                        <span>05 de Ago, 2023</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2024 Portal do Professor. Todos os direitos reservados.</p>
         </div>
-    </div>
-
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-
-        // --- Seleção de Elementos do DOM ---
-        const newPostBtn = document.querySelector('.btn-new-post');
-        const modal = document.getElementById('post-modal');
-        const closeModalBtn = modal.querySelector('.close-modal-btn');
-        const cancelBtn = modal.querySelector('#cancel-btn');
-        const modalTitle = modal.querySelector('#modal-title');
-        const postForm = document.getElementById('post-form');
-        const saveBtn = modal.querySelector('#save-btn');
-        const mainContent = document.querySelector('.main-content');
-
-        // --- Funções do Modal ---
-        const openModal = () => modal.classList.remove('hidden');
-        const closeModal = () => {
-            modal.classList.add('hidden');
-            postForm.reset(); // Limpa o formulário
-            postForm.querySelector('#post-id').value = ''; // Limpa o ID escondido
-        };
-
-        // --- Abrir Modal para CRIAR um novo post ---
-        newPostBtn.addEventListener('click', () => {
-            modalTitle.textContent = 'Criar Novo Post';
-            openModal();
-        });
-
-        // --- Fechar o Modal ---
-        closeModalBtn.addEventListener('click', closeModal);
-        cancelBtn.addEventListener('click', closeModal);
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                closeModal();
-            }
-        });
-
-        // --- Lógica de Ações nos Cards (Editar e Apagar) ---
-        mainContent.addEventListener('click', (e) => {
-            const actionButton = e.target.closest('.action-btn');
-            if (!actionButton) return;
-
-            const card = actionButton.closest('.resource-card');
-
-            // --- Lógica para APAGAR ---
-            if (actionButton.title.includes('Apagar')) {
-                const userIsSure = confirm('Você tem certeza que deseja apagar este post? Esta ação não pode ser desfeita.');
-                if (userIsSure) {
-                    card.style.transition = 'opacity 0.3s, transform 0.3s';
-                    card.style.opacity = '0';
-                    card.style.transform = 'scale(0.9)';
-                    setTimeout(() => card.remove(), 300);
-                }
-            }
-
-            // --- Lógica para EDITAR ---
-            if (actionButton.title.includes('Editar')) {
-                const cardTitle = card.querySelector('.resource-content strong').textContent.trim();
-                const cardDescription = card.querySelector('.resource-content span').lastChild.textContent.replace(/-/g, '').trim().replace(/"/g, '');
-                const cardIconClass = card.querySelector('.resource-content i').className;
-                
-                modalTitle.textContent = 'Editar Post';
-                postForm.querySelector('#post-id').value = card.dataset.id;
-                postForm.querySelector('#post-title-input').value = cardTitle;
-                postForm.querySelector('#post-description-input').value = cardDescription;
-
-                const iconSelect = postForm.querySelector('#post-icon-input');
-                Array.from(iconSelect.options).forEach(option => {
-                    if (cardIconClass.includes(option.value)) {
-                        option.selected = true;
-                    }
-                });
-
-                openModal();
-            }
-        });
-
-        // --- Lógica para SALVAR (criação e edição) ---
-        saveBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            
-            const postId = postForm.querySelector('#post-id').value;
-            const title = postForm.querySelector('#post-title-input').value;
-            const description = postForm.querySelector('#post-description-input').value;
-            const iconClass = postForm.querySelector('#post-icon-input').value;
-
-            if (!title || !description) {
-                alert('Por favor, preencha o título e a descrição.');
-                return;
-            }
-
-            if (postId) {
-                // EDITANDO post existente
-                const cardToUpdate = document.querySelector(`[data-id='${postId}']`);
-                if (cardToUpdate) {
-                    cardToUpdate.querySelector('.resource-content strong').textContent = title;
-                    cardToUpdate.querySelector('.resource-content span').lastChild.textContent = ` - "${description}"`;
-                    cardToUpdate.querySelector('.resource-content i').className = iconClass;
-                }
-            } else {
-                // CRIANDO novo post
-                const announcementsColumn = document.querySelector('.announcements-column');
-                if (announcementsColumn) {
-                    const newCardHTML = `
-                        <div class="resource-card" data-id="${Date.now()}">
-                            <a href="#" class="resource-content">
-                                <i class="${iconClass}"></i>
-                                <span><strong>${title}</strong> - "${description}"</span>
-                            </a>
-                            <div class="resource-actions">
-                                <button class="action-btn" title="Editar Post"><i class="fas fa-pen"></i></button>
-                                <button class="action-btn" title="Apagar Post"><i class="fas fa-trash"></i></button>
-                            </div>
-                        </div>`;
-                    announcementsColumn.insertAdjacentHTML('beforeend', newCardHTML);
-                }
-            }
-
-            closeModal();
-        });
-
-    });
-    </script>
+    </footer>
 
 </body>
 </html>

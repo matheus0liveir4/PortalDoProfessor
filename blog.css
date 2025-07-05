@@ -1,13 +1,14 @@
-/* --- Reset e Configurações Globais --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 :root {
     --primary-blue: #007bff;
-    --light-blue: #e7f3ff;
-    --text-dark: #333;
+    --text-dark: #343a40;
+    --text-body: #555;
     --text-light: #6c757d;
     --bg-color: #f8f9fa;
     --white: #ffffff;
     --border-color: #dee2e6;
-    --shadow: 0 4px 8px rgba(0,0,0,0.05);
+    --shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
 * {
@@ -18,355 +19,225 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #F0F4F7; /* Cor de fundo principal */
+    background-color: var(--white);
     color: var(--text-dark);
-    display: flex;
-    min-height: 100vh;
 }
 
-/* --- Estrutura Principal --- */
 .container {
-    display: flex;
-    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.sidebar {
-    width: 260px;
-    background-color: var(--white);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    border-right: 1px solid #e9ecef;
+a {
+    text-decoration: none;
+    color: var(--primary-blue);
+    transition: color 0.2s;
+}
+a:hover { color: var(--text-dark); }
+
+/* --- Cabeçalho Público (Reutilizado) --- */
+.site-header { background-color: var(--white); padding: 15px 0; border-bottom: 1px solid var(--border-color); }
+.header-container { display: flex; justify-content: space-between; align-items: center; }
+.logo a { font-size: 1.5rem; font-weight: 700; color: var(--text-dark); }
+.main-nav ul { list-style: none; display: flex; gap: 25px; }
+.main-nav a { font-weight: 500; color: var(--text-light); }
+.main-nav a.active, .main-nav a:hover { color: var(--primary-blue); }
+.btn { padding: 8px 16px; border-radius: 6px; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; transition: opacity 0.3s; border: none; cursor: pointer; }
+.btn-moodle { background-color: var(--primary-blue); color: var(--white); }
+
+/* --- Conteúdo Principal e Container do Post --- */
+.page-wrapper {
+    padding: 50px 0;
+}
+.single-post-container {
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.main-wrapper {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.main-header {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    padding: 15px 30px;
-    background-color: var(--white);
-    border-bottom: 1px solid #e9ecef;
-}
-
-.main-content {
-    flex-grow: 1;
-    padding: 30px;
-}
-
-/* --- Componentes da Sidebar --- */
-.sidebar-title {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--text-dark);
+/* --- Cabeçalho do Artigo --- */
+.post-header {
+    text-align: center;
     margin-bottom: 30px;
 }
-
-.sidebar-title .fa-user-tie { color: var(--primary-blue); }
-
-.sidebar-nav ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-
-.sidebar-nav a {
-    display: flex;
-    align-items: center;
-    padding: 12px 15px;
-    text-decoration: none;
-    color: var(--text-light);
+.meta-category {
+    background-color: #eaf3ff;
+    color: var(--primary-blue);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
     font-weight: 500;
-    border-radius: 8px;
-    transition: background-color 0.3s, color 0.3s;
+    display: inline-block;
+    margin-bottom: 15px;
 }
-
-.sidebar-nav a:hover { background-color: var(--light-blue); color: var(--primary-blue); }
-.sidebar-nav a.active { background-color: var(--primary-blue); color: var(--white); }
-.sidebar-nav a .nav-icon { width: 20px; margin-right: 15px; text-align: center; }
-.notification-badge { margin-left: auto; background-color: #dc3545; color: var(--white); font-size: 0.75rem; font-weight: 600; width: 20px; height: 20px; border-radius: 50%; display: flex; justify-content: center; align-items: center; }
-
-/* --- Componentes do Header --- */
-.page-title {
+.post-header h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+.post-meta-author {
     display: flex;
     align-items: center;
-    gap: 15px;
-    font-size: 1.8rem;
-    font-weight: 600;
+    justify-content: center;
+    gap: 10px;
+    color: var(--text-light);
+}
+.author-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
-.header-actions { display: flex; align-items: center; gap: 20px; }
-.user-info { font-weight: 500; color: var(--text-light); }
-.btn { padding: 8px 15px; border-radius: 6px; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 8px; transition: opacity 0.3s; border: none; cursor: pointer; }
-.btn:hover { opacity: 0.85; }
-.btn-secondary { background-color: #e9ecef; color: var(--text-dark); }
-.btn-primary { background-color: var(--primary-blue); color: var(--white); }
-
-/* --- ESTILOS ORIGINAIS DA PÁGINA DE BLOG --- */
-.content-section {
-    background-color: var(--white);
-    padding: 25px;
+/* --- Imagem de Destaque --- */
+.post-featured-image {
+    margin-bottom: 40px;
+}
+.post-featured-image img {
+    width: 100%;
+    height: auto;
     border-radius: 12px;
-    border: 1px solid #e9ecef;
+    box-shadow: var(--shadow);
+}
+
+/* --- Corpo do Post (Tipografia) --- */
+.post-body {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-body);
+}
+.post-body h2 {
+    font-size: 1.8rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+.post-body p {
+    margin-bottom: 20px;
+}
+.post-body blockquote {
+    margin: 30px 0;
+    padding: 20px;
+    border-left: 4px solid var(--primary-blue);
+    background-color: var(--bg-color);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--text-dark);
+}
+.post-body ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+.post-body li {
+    margin-bottom: 10px;
+}
+
+/* --- Seção de Comentários --- */
+.comments-section {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border-color);
+}
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.comment {
+    display: flex;
+    gap: 15px;
     margin-bottom: 25px;
 }
-
-.blog-grid-top {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr; 
-    gap: 25px;
-}
-
-.video-card {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.video-card h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.video-card h3 .fa-thumbtack {
-    color: #dc3545;
-}
-
-.video-player-placeholder {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background-color: #333;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.announcements-column {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.resource-card {
-    background-color: var(--primary-blue);
-    color: var(--white);
-    padding: 20px 25px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    transition: transform 0.2s;
-}
-.resource-card:hover {
-    transform: translateY(-3px);
-}
-
-.resource-card i {
-    font-size: 1.2rem;
-}
-
-.resource-links-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-/* 
-============================================================
-=== ESTILOS ADICIONADOS PARA GERENCIAMENTO (NÃO ALTERAM O RESTO) ===
-============================================================
-*/
-.header-title-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.resource-content {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: inherit;
-    flex-grow: 1;
-}
-
-.resource-actions {
-    display: flex;
-    gap: 8px;
-}
-
-.action-btn {
-    background-color: rgba(255, 255, 255, 0.15);
-    color: var(--white);
-    border: none;
-    width: 32px;
-    height: 32px;
+.comment-avatar {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.2s;
 }
-
-.action-btn:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-}
-
-/* 
-==================================================
-=== ESTILOS ADICIONADOS PARA O MODAL (FORMULÁRIO) ===
-==================================================
-*/
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-}
-
-.modal-overlay.hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.modal-content {
-    background: var(--white);
-    padding: 25px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 550px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    transform: scale(1);
-    transition: transform 0.3s ease;
-}
-
-.modal-overlay.hidden .modal-content {
-    transform: scale(0.95);
-}
-
-.modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 15px;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.modal-header h2 { font-weight: 600; font-size: 1.5rem; }
-
-.close-modal-btn { 
-    background: none; 
-    border: none; 
-    font-size: 2.2rem; 
-    cursor: pointer; 
-    color: var(--text-light); 
-    line-height: 1;
-    padding: 0;
-}
-.close-modal-btn:hover { color: var(--text-dark); }
-
-.modal-body {
-    padding: 25px 0;
-}
-
-.post-form .form-group { margin-bottom: 20px; }
-
-.post-form label { 
-    display: block; 
-    font-weight: 500; 
-    margin-bottom: 8px;
+.comment-author {
+    margin-bottom: 5px;
     font-size: 0.9rem;
 }
-
-.post-form input[type="text"],
-.post-form textarea,
-.post-form select {
+.comment-author span {
+    color: var(--text-light);
+}
+.comment-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+.comment-form-wrapper {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+}
+.comment-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+.comment-form input, .comment-form textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid var(--border-color);
     border-radius: 6px;
     font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.comment-form textarea {
+    margin-bottom: 15px;
+}
+.btn-submit {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 12px 25px;
 }
 
-.post-form input:focus, .post-form textarea:focus, .post-form select:focus {
-    outline: none;
-    border-color: var(--primary-blue);
-    box-shadow: 0 0 0 3px var(--light-blue);
+/* --- Posts Relacionados --- */
+.related-posts-section {
+    background-color: var(--bg-color);
+    padding: 60px 0;
+    margin-top: 60px;
+}
+.text-center { text-align: center; }
+.related-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.related-post-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    color: var(--text-dark);
+    transition: transform 0.2s;
+}
+.related-post-card:hover {
+    transform: translateY(-5px);
+}
+.related-post-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.related-post-card h4 {
+    padding: 20px 20px 5px 20px;
+    font-size: 1.1rem;
+    line-height: 1.4;
+}
+.related-post-card span {
+    padding: 0 20px 20px 20px;
+    font-size: 0.8rem;
+    color: var(--text-light);
+    display: block;
 }
 
-.modal-footer {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    padding-top: 15px;
+/* --- Rodapé --- */
+.site-footer {
+    text-align: center;
+    padding: 30px 0;
     border-top: 1px solid var(--border-color);
-}
-
-/* --- Responsividade --- */
-@media (max-width: 1200px) {
-    .blog-grid-top {
-        grid-template-columns: 1fr; 
-    }
-}
-@media (max-width: 992px) {
-    .container { flex-direction: column; }
-    .sidebar { width: 100%; height: auto; flex-direction: row; align-items: center; justify-content: space-between; padding: 10px 20px; border-right: none; border-bottom: 1px solid #e9ecef; }
-    .sidebar-title { margin-bottom: 0; }
-    .sidebar-nav { display: none; }
-    .main-content { padding: 20px; }
-    .main-header { flex-direction: column; align-items: flex-start; gap: 10px;}
-}
-@media (max-width: 768px) {
-    .resource-links-grid {
-        grid-template-columns: 1fr;
-    }
-    .page-title {
-        font-size: 1.5rem;
-    }
-    .resource-card {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .resource-actions {
-        margin-top: 15px;
-        align-self: flex-end;
-    }
-}
-@media (max-width: 576px) {
-    .main-header { align-items: stretch; }
-    .header-title-wrapper {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-    .header-actions { align-self: flex-end; }
-    .user-info { display: none; }
+    margin-top: 20px;
+    color: var(--text-light);
+    background-color: var(--white);
 }
