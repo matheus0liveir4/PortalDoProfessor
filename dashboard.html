@@ -130,5 +130,18 @@
         </div>
     </div>
 
+    <!-- No final do <body> do dashboard.html -->
+<script src="auth.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        protectPage(); // Protege a página
+
+        // Adiciona funcionalidade ao botão de Sair
+        const logoutButton = document.querySelector('.btn-secondary'); 
+        if(logoutButton && logoutButton.innerText.trim().toLowerCase() === 'sair') {
+            logoutButton.addEventListener('click', logout);
+        }
+    });
+</script>
 </body>
 </html>

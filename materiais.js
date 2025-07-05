@@ -1,4 +1,7 @@
+// public/materiais.js
 document.addEventListener('DOMContentLoaded', () => {
+
+    const API_URL = 'http://localhost:3000/api/materiais';
 
     // --- SELEÇÃO DE ELEMENTOS ---
     const addMaterialBtn = document.querySelector('.btn-add-material');
@@ -18,6 +21,36 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('material-id').value = '';
     };
 
+    // --- CARREGAR E RENDERIZAR MATERIAIS ---
+    const fetchAndRenderMaterials = async () => {
+        try {
+            const response = await fetch(API_URL);
+            if (!response.ok) throw new Error('Erro ao buscar dados da API');
+            const materiais = await response.json();
+
+            // Limpa todos os grids antes de renderizar
+            document.querySelectorAll('.material-grid').forEach(grid => grid.innerHTML = '');
+
+            if (materiais.length === 0) {
+                // Opcional: Mostrar uma mensagem se não houver materiais
+                console.log('Nenhum material encontrado.');
+                return;
+            }
+
+            // Adiciona cada material ao seu respectivo grid de categoria
+            materiais.forEach(material => {
+                const cardHTML = createMaterialCard(material);
+                const targetGrid = document.querySelector(`.material-section[data-category='${material.categoria}'] .material-grid`);
+                if (targetGrid) {
+                    targetGrid.insertAdjacentHTML('beforeend', cardHTML);
+                }
+            });
+        } catch (error) {
+            console.error('Falha ao carregar materiais:', error);
+            // Poderia mostrar uma mensagem de erro na tela para o usuário
+        }
+    };
+
     // --- ABRIR MODAL PARA CRIAR NOVO MATERIAL ---
     addMaterialBtn.addEventListener('click', () => {
         modalTitle.textContent = 'Adicionar Novo Material';
@@ -31,82 +64,80 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === modal) closeModal();
     });
 
-    // --- LÓGICA DE SALVAR (CRIAR E EDITAR) ---
-    materialForm.addEventListener('submit', (e) => {
+    // --- LÓGICA DE SALVAR (CRIAR E EDITAR) VIA API ---
+    materialForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        // Coletar dados do formulário
         const id = document.getElementById('material-id').value;
-        const title = document.getElementById('material-title').value;
-        const description = document.getElementById('material-description').value;
-        const category = document.getElementById('material-category').value;
-        const type = document.getElementById('material-type').value;
-        const size = document.getElementById('material-size').value;
-        const link = document.getElementById('material-link').value;
-        
-        if (id) {
-            // EDITAR MATERIAL EXISTENTE
-            const cardToUpdate = document.querySelector(`.material-card[data-id='${id}']`);
-            if (cardToUpdate) {
-                cardToUpdate.querySelector('h3').textContent = title;
-                cardToUpdate.querySelector('p').textContent = description;
-                cardToUpdate.querySelector('.file-info span:nth-child(1)').textContent = type;
-                cardToUpdate.querySelector('.file-info span:nth-child(2)').textContent = size;
-                cardToUpdate.querySelector('.btn-download').href = link;
-                
-                // Mover o card se a categoria mudou
-                const currentCategory = cardToUpdate.closest('.material-section').dataset.category;
-                if(currentCategory !== category) {
-                    const newGrid = document.querySelector(`.material-section[data-category='${category}'] .material-grid`);
-                    newGrid.appendChild(cardToUpdate);
-                }
-            }
-        } else {
-            // CRIAR NOVO MATERIAL
-            const newCard = createMaterialCard({ id: Date.now(), title, description, type, size, link });
-            const targetGrid = document.querySelector(`.material-section[data-category='${category}'] .material-grid`);
-            if (targetGrid) {
-                targetGrid.insertAdjacentHTML('beforeend', newCard);
-            }
+        const materialData = {
+            titulo: document.getElementById('material-title').value,
+            descricao: document.getElementById('material-description').value,
+            categoria: document.getElementById('material-category').value,
+            tipo_arquivo: document.getElementById('material-type').value,
+            tamanho_arquivo: document.getElementById('material-size').value,
+            link_download: document.getElementById('material-link').value,
+        };
+
+        const method = id ? 'PUT' : 'POST';
+        const url = id ? `${API_URL}/${id}` : API_URL;
+
+        try {
+            const response = await fetch(url, {
+                method: method,
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(materialData),
+            });
+
+            if (!response.ok) throw new Error(`Erro ao ${id ? 'atualizar' : 'criar'} material.`);
+            
+            closeModal();
+            fetchAndRenderMaterials(); // Recarrega os materiais para exibir a mudança
+        } catch (error) {
+            console.error('Erro ao salvar material:', error);
+            alert(`Falha ao salvar. ${error.message}`);
         }
-        closeModal();
     });
 
     // --- LÓGICA DE AÇÕES NOS CARDS (EDITAR E APAGAR) ---
-    materialsContainer.addEventListener('click', (e) => {
+    materialsContainer.addEventListener('click', async (e) => {
         const editBtn = e.target.closest('.btn-edit');
         const deleteBtn = e.target.closest('.btn-delete');
+        const card = e.target.closest('.material-card');
+
+        if (!card) return;
+        const id = card.dataset.id;
 
         if (editBtn) {
-            const card = editBtn.closest('.material-card');
-            const id = card.dataset.id;
-            const title = card.querySelector('h3').textContent;
-            const description = card.querySelector('p').textContent;
-            const type = card.querySelector('.file-info span:nth-child(1)').textContent;
-            const size = card.querySelector('.file-info span:nth-child(2)').textContent;
-            const category = card.closest('.material-section').dataset.category;
-            const link = card.querySelector('.btn-download').href;
-
-            // Preencher o modal
+            // A lógica de preencher o modal pode continuar a mesma,
+            // pois os dados já estão no card.
             modalTitle.textContent = 'Editar Material';
             document.getElementById('material-id').value = id;
-            document.getElementById('material-title').value = title;
-            document.getElementById('material-description').value = description;
-            document.getElementById('material-category').value = category;
-            document.getElementById('material-type').value = type;
-            document.getElementById('material-size').value = size;
-            document.getElementById('material-link').value = link;
+            document.getElementById('material-title').value = card.querySelector('h3').textContent;
+            document.getElementById('material-description').value = card.querySelector('p').textContent;
+            document.getElementById('material-category').value = card.closest('.material-section').dataset.category;
+            document.getElementById('material-type').value = card.querySelector('.file-info span:nth-child(1)').textContent;
+            document.getElementById('material-size').value = card.querySelector('.file-info span:nth-child(2)').textContent;
+            document.getElementById('material-link').value = card.querySelector('.btn-download').href;
             
             openModal();
         }
 
         if (deleteBtn) {
-            const card = deleteBtn.closest('.material-card');
             if (confirm('Tem certeza que deseja apagar este material?')) {
-                card.style.transition = 'opacity 0.3s, transform 0.3s';
-                card.style.opacity = '0';
-                card.style.transform = 'scale(0.9)';
-                setTimeout(() => card.remove(), 300);
+                try {
+                    const response = await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
+                    if (!response.ok) throw new Error('Erro ao apagar o material no servidor.');
+                    
+                    // Animação e remoção do DOM
+                    card.style.transition = 'opacity 0.3s, transform 0.3s';
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.9)';
+                    setTimeout(() => card.remove(), 300);
+
+                } catch (error) {
+                    console.error('Erro ao apagar:', error);
+                    alert(`Falha ao apagar. ${error.message}`);
+                }
             }
         }
     });
@@ -116,10 +147,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return `
             <article class="material-card" data-id="${data.id}">
                 <div class="card-content">
-                    <h3>${data.title}</h3>
-                    <p>${data.description}</p>
+                    <h3>${data.titulo}</h3>
+                    <p>${data.descricao}</p>
                     <div class="file-info">
-                        <span>${data.type}</span><span>${data.size}</span>
+                        <span>${data.tipo_arquivo}</span><span>${data.tamanho_arquivo}</span>
                     </div>
                 </div>
                 <div class="card-footer">
@@ -127,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <button class="btn-icon btn-edit" title="Editar"><i class="fa-solid fa-pen"></i></button>
                         <button class="btn-icon btn-delete" title="Apagar"><i class="fa-solid fa-trash"></i></button>
                     </div>
-                    <a href="${data.link}" class="btn btn-download"><i class="fa-solid fa-download"></i> Download</a>
+                    <a href="${data.link_download}" class="btn btn-download" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-download"></i> Download</a>
                 </div>
             </article>
         `;
@@ -139,20 +170,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const clickedTab = e.target.closest('.tab-link');
         if (!clickedTab) return;
 
-        // Atualizar estado ativo
         filterTabs.querySelector('.active').classList.remove('active');
         clickedTab.classList.add('active');
 
         const filterValue = clickedTab.dataset.filter;
-        const allSections = document.querySelectorAll('.material-section');
-
-        allSections.forEach(section => {
-            if (filterValue === 'todos' || section.dataset.category === filterValue) {
-                section.classList.remove('hidden');
-            } else {
-                section.classList.add('hidden');
-            }
+        document.querySelectorAll('.material-section').forEach(section => {
+            section.style.display = (filterValue === 'todos' || section.dataset.category === filterValue) ? 'block' : 'none';
         });
     });
 
+    // --- INICIALIZAÇÃO ---
+    fetchAndRenderMaterials();
 });

@@ -1,12 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    const API_URL = 'http://localhost:3000/api/eventos';
+
+    // --- Seleção de Elementos ---
     const calendarBody = document.getElementById('calendar-body');
     const monthYearDisplay = document.getElementById('month-year-display');
     const prevMonthBtn = document.getElementById('prev-month-btn');
     const nextMonthBtn = document.getElementById('next-month-btn');
     const eventsListContainer = document.getElementById('events-list-container');
     
-    // Modal Elements
+    // --- Elementos do Modal ---
     const modal = document.getElementById('event-modal');
     const closeModalBtn = modal.querySelector('.close-modal-btn');
     const addEventSidebarBtn = document.getElementById('add-event-sidebar-btn');
@@ -15,17 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const deleteEventBtn = document.getElementById('delete-event-btn');
 
     let currentDate = new Date();
-    let events = [
-        // Exemplo de evento inicial
-        { id: 1, title: 'Reunião Pedagógica', date: '2025-07-04', type: 'reuniao' },
-        { id: 2, title: 'Entrega de Notas', date: '2025-07-13', type: 'prazo' },
-        { id: 3, title: 'Aula de Reforço', date: '2025-07-16', type: 'aula' },
-        { id: 4, title: 'Palestra Convidada', date: '2025-07-18', type: 'aula' },
-        { id: 5, title: 'Festa Julina', date: '2025-07-24', type: 'pessoal' },
-    ];
+    let events = []; // Os eventos agora serão carregados da API
 
     const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
 
+    // --- FUNÇÕES DE RENDERIZAÇÃO ---
     function renderCalendar() {
         calendarBody.innerHTML = '';
         const year = currentDate.getFullYear();
@@ -50,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const dayCell = document.createElement('div');
             dayCell.classList.add('day-cell');
             dayCell.textContent = i;
+            // O formato da data deve ser YYYY-MM-DD para corresponder ao input e ao banco
             dayCell.dataset.date = `${year}-${String(month + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
             
             const today = new Date();
@@ -73,8 +71,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const year = currentDate.getFullYear();
         const month = currentDate.getMonth();
         
+        // A data no JS inclui fuso horário, então comparamos apenas ano e mês
         const monthEvents = events
-            .filter(e => new Date(e.date).getFullYear() === year && new Date(e.date).getMonth() === month)
+            .filter(e => {
+                const eventDate = new Date(e.date);
+                return eventDate.getFullYear() === year && eventDate.getMonth() === month;
+            })
             .sort((a, b) => new Date(a.date) - new Date(b.date));
 
         if (monthEvents.length === 0) {
@@ -87,14 +89,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         monthEvents.forEach(event => {
-            const eventDate = new Date(event.date);
+            const eventDate = new Date(event.date); // A data já vem no formato certo do DB
             const eventItem = document.createElement('div');
             eventItem.className = 'event-item';
             eventItem.dataset.eventId = event.id;
             eventItem.innerHTML = `
                 <div class="event-date">
-                    <div class="day">${eventDate.getDate()}</div>
-                    <div class="month">${monthNames[eventDate.getMonth()].substring(0, 3)}</div>
+                    <div class="day">${eventDate.getUTCDate()}</div>
+                    <div class="month">${monthNames[eventDate.getUTCMonth()].substring(0, 3)}</div>
                 </div>
                 <div class="event-details">
                     <h4>${event.title}</h4>
@@ -104,6 +106,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- FUNÇÕES DE INTERAÇÃO COM API ---
+    async function fetchEvents() {
+        try {
+            const response = await fetch(API_URL);
+            if (!response.ok) throw new Error('Erro ao buscar eventos');
+            events = await response.json();
+            renderCalendar();
+        } catch (error) {
+            console.error(error);
+            alert('Não foi possível carregar os eventos.');
+        }
+    }
+
+    // --- FUNÇÕES DO MODAL ---
     function openModal(date = null, eventToEdit = null) {
         modal.classList.remove('hidden');
         eventForm.reset();
@@ -119,12 +135,18 @@ document.addEventListener('DOMContentLoaded', () => {
             deleteEventBtn.style.display = 'block';
         } else {
             modalTitle.textContent = 'Adicionar Evento';
-            if(date) document.getElementById('event-date').value = date;
+            if(date) {
+                document.getElementById('event-date').value = date;
+            } else {
+                // Preenche com a data de hoje se nenhuma data for fornecida
+                const today = new Date().toISOString().split('T')[0];
+                document.getElementById('event-date').value = today;
+            }
         }
     }
     const closeModal = () => modal.classList.add('hidden');
-
-    // --- Event Listeners ---
+    
+    // --- OUVINTES DE EVENTOS (Event Listeners) ---
     prevMonthBtn.addEventListener('click', () => {
         currentDate.setMonth(currentDate.getMonth() - 1);
         renderCalendar();
@@ -146,35 +168,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
     addEventSidebarBtn.addEventListener('click', () => openModal());
     closeModalBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', e => {
-        if (e.target === modal) closeModal();
-    });
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
 
-    eventForm.addEventListener('submit', e => {
+    eventForm.addEventListener('submit', async e => {
         e.preventDefault();
         const id = document.getElementById('event-id').value;
-        const newEvent = {
-            id: id ? parseInt(id) : Date.now(),
+        const eventData = {
             title: document.getElementById('event-title').value,
             date: document.getElementById('event-date').value,
             type: document.getElementById('event-type').value,
         };
 
-        if(id) { // Edit
-            events = events.map(ev => ev.id === newEvent.id ? newEvent : ev);
-        } else { // Add
-            events.push(newEvent);
+        const method = id ? 'PUT' : 'POST';
+        const url = id ? `${API_URL}/${id}` : API_URL;
+
+        try {
+            const response = await fetch(url, {
+                method,
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(eventData),
+            });
+            if (!response.ok) throw new Error('Falha ao salvar o evento');
+            
+            closeModal();
+            fetchEvents(); // Recarrega todos os eventos do servidor
+        } catch (error) {
+            console.error(error);
+            alert(error.message);
         }
-        renderCalendar();
-        closeModal();
     });
     
-    deleteEventBtn.addEventListener('click', () => {
+    deleteEventBtn.addEventListener('click', async () => {
         const id = document.getElementById('event-id').value;
-        if(confirm('Tem certeza que deseja apagar este evento?')) {
-            events = events.filter(ev => ev.id !== parseInt(id));
-            renderCalendar();
-            closeModal();
+        if(id && confirm('Tem certeza que deseja apagar este evento?')) {
+            try {
+                const response = await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
+                if (!response.ok) throw new Error('Falha ao apagar o evento');
+
+                closeModal();
+                fetchEvents(); // Recarrega todos os eventos do servidor
+            } catch(error) {
+                console.error(error);
+                alert(error.message);
+            }
         }
     });
     
@@ -187,5 +223,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    renderCalendar();
+    // --- INICIALIZAÇÃO ---
+    fetchEvents();
 });
