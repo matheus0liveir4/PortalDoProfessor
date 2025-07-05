@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
-     --cor-primaria: #0d6efd;
     --primary-blue: #007bff;
     --text-dark: #343a40;
     --text-body: #555;
@@ -171,26 +170,22 @@ a:hover { color: var(--text-dark); }
     background-color: var(--bg-color);
     border-radius: 8px;
 }
-.comment-form .form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-bottom: 15px;
-}
+/* Estilo do formulário modificado - sem a .form-row */
 .comment-form input, .comment-form textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid var(--border-color);
     border-radius: 6px;
     font-family: 'Poppins', sans-serif;
-}
-.comment-form textarea {
-    margin-bottom: 15px;
+    margin-bottom: 15px; /* Adicionado para espaçar o textarea do botão */
 }
 .btn-submit {
     background-color: var(--primary-blue);
     color: var(--white);
     padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 /* --- Posts Relacionados --- */

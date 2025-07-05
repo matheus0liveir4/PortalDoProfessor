@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Portal do Professor</title>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome (para os ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="blog_publico.css">
+</head>
+<body>
+
+    <!-- ======================= Cabeçalho Público ======================= -->
+    <header class="site-header">
+         <div class="container header-container">
+            <div class="logo"><a href="#">Portal do Professor</a></div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#" class="active">Blog</a></li>
+                    <li><a href="#">Materiais</a></li>
+                    <li><a href="#">Agenda</a></li>
+                    <li><a href="#">Portfólio</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Sobre</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-moodle"><i class="fa-solid fa-graduation-cap"></i> Acessar Moodle</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======================= Conteúdo Principal ======================= -->
+    <main class="page-wrapper">
+        <div class="container">
+            <div class="page-header">
+                <h1>Blog & Notícias</h1>
+                <p>Artigos, estudos de caso e novidades sobre educação e tecnologia.</p>
+            </div>
+
+            <div class="blog-layout">
+                <!-- Coluna Principal com os Posts -->
+                <div class="blog-posts-column">
+                    <article class="blog-post">
+                        <a href="#" class="post-image-link">
+                            <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Imagem do post sobre UI/UX">
+                        </a>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span><i class="fas fa-user"></i> Professor</span>
+                                <span><i class="fas fa-calendar-alt"></i> 15 de Ago, 2023</span>
+                                <span><i class="fas fa-folder"></i> Estudo de Caso</span>
+                            </div>
+                            <h2><a href="#">O que torna a interface do Nubank tão intuitiva?</a></h2>
+                            <p class="post-excerpt">
+                                Uma análise aprofundada dos princípios de design e da psicologia do usuário que fazem do aplicativo do Nubank uma referência em usabilidade e experiência do cliente no setor financeiro.
+                            </p>
+                            <a href="#" class="btn-read-more">Leia Mais <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                    <article class="blog-post">
+                         <a href="#" class="post-image-link">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Imagem do post sobre atividades práticas">
+                        </a>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span><i class="fas fa-user"></i> Professor</span>
+                                <span><i class="fas fa-calendar-alt"></i> 10 de Ago, 2023</span>
+                                <span><i class="fas fa-folder"></i> Atividade Prática</span>
+                            </div>
+                            <h2><a href="#">Redesenhe uma tela de cadastro com foco em feedback</a></h2>
+                            <p class="post-excerpt">
+                                Um guia prático para estudantes de UI/UX sobre como melhorar telas de cadastro, focando em fornecer feedback claro ao usuário e manter a consistência visual em todo o processo.
+                            </p>
+                            <a href="#" class="btn-read-more">Leia Mais <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+
+                     <article class="blog-post">
+                         <a href="#" class="post-image-link">
+                            <img src="https://images.unsplash.com/photo-1587440871875-191322ee64b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" alt="Imagem do post sobre ferramentas de design">
+                        </a>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <span><i class="fas fa-user"></i> Professor</span>
+                                <span><i class="fas fa-calendar-alt"></i> 05 de Ago, 2023</span>
+                                <span><i class="fas fa-folder"></i> Ferramentas</span>
+                            </div>
+                            <h2><a href="#">Comparativo: Figma, Adobe XD e Balsamiq</a></h2>
+                            <p class="post-excerpt">
+                                Qual a melhor ferramenta para prototipação e design de interfaces? Analisamos os pontos fortes e fracos de cada uma para ajudar você a escolher a ideal para o seu próximo projeto.
+                            </p>
+                            <a href="#" class="btn-read-more">Leia Mais <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Barra Lateral -->
+                <aside class="blog-sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Pesquisar</h3>
+                        <div class="search-box">
+                            <input type="text" placeholder="Digite e tecle Enter...">
+                            <button><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="sidebar-widget">
+                        <h3>Categorias</h3>
+                        <ul class="category-list">
+                            <li><a href="#">Estudo de Caso<span>(1)</span></a></li>
+                            <li><a href="#">Atividade Prática<span>(1)</span></a></li>
+                            <li><a href="#">Ferramentas<span>(1)</span></a></li>
+                            <li><a href="#">Tutoriais<span>(0)</span></a></li>
+                            <li><a href="#">Notícias<span>(0)</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-widget">
+                        <h3>Posts Recentes</h3>
+                        <ul class="recent-posts-list">
+                            <li>
+                                <a href="#">
+                                    <span class="post-title">O que torna a interface do Nubank tão intuitiva?</span>
+                                    <span class="post-date">15 de Ago, 2023</span>
+                                </a>
+                            </li>
+                             <li>
+                                <a href="#">
+                                    <span class="post-title">Redesenhe uma tela de cadastro com foco em feedback</span>
+                                    <span class="post-date">10 de Ago, 2023</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2024 Portal do Professor. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
