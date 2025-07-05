@@ -54,11 +54,39 @@ body {
 .sidebar-header { display: flex; align-items: center; gap: 10px; font-size: 1.2rem; font-weight: 600; margin-bottom: 30px; }
 .sidebar-header .bx { font-size: 1.8rem; color: var(--primary-blue); }
 .sidebar-title { text-transform: uppercase; font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); padding: 0 10px; margin-bottom: 10px; }
-.sidebar-nav ul { list-style: none; }
-.sidebar-nav a { display: flex; align-items: center; padding: 12px 10px; margin-bottom: 5px; text-decoration: none; color: var(--text-secondary); border-radius: 8px; font-weight: 500; transition: background-color 0.2s, color 0.2s; }
-.sidebar-nav a:hover { background-color: var(--light-blue-bg); color: var(--primary-blue); }
-.sidebar-nav a.active { background-color: var(--primary-blue); color: var(--white); }
-.sidebar-nav a .bx { font-size: 1.4rem; margin-right: 15px; }
+        .sidebar-nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            text-decoration: none;
+            color: var(--text-light);
+            font-weight: 500;
+            border-radius: 8px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .sidebar-nav a:hover {
+            background-color: var(--light-blue);
+            color: var(--primary-blue);
+        }
+
+        .sidebar-nav a.active {
+            background-color: var(--primary-blue);
+            color: var(--white);
+        }
+        
+        .sidebar-nav a .nav-icon {
+            width: 20px;
+            margin-right: 15px;
+            text-align: center;
+        }
 .notification-badge { margin-left: auto; background-color: var(--red-accent); color: white; font-size: 0.7rem; font-weight: 600; width: 20px; height: 20px; border-radius: 50%; display: flex; justify-content: center; align-items: center; }
 
 /* --- Wrapper do Conteúdo (Calendário + Sidebar Direita) --- */
