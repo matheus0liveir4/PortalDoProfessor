@@ -27,7 +27,8 @@ body {
     min-height: 100vh;
     padding: 2rem;
 }
-.btn-moodle { background-color: var(--cor-primaria); color: white; }
+.btn-moodle { background-color: var(--cor-primaria); color: white;}
+
 .app-container {
     display: flex;
     width: 100%;

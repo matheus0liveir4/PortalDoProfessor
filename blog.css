@@ -1,6 +1,6 @@
 /* --- Reset e Configurações Globais --- */
 :root {
-     --cor-primaria: #0d6efd;
+    --cor-primaria: #0d6efd;
     --primary-blue: #007bff;
     --light-blue: #e7f3ff;
     --text-dark: #333;
@@ -24,6 +24,7 @@ body {
     display: flex;
     min-height: 100vh;
 }
+.btn-moodle { background-color: var(--cor-primaria); color: white;}
 
 /* --- Estrutura Principal --- */
 .container {
