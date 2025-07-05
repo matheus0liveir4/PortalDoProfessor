@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Professor</title>
+    <link rel="stylesheet" href="public/css/agenda.css">
+    <!-- Boxicons CDN for icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class='bx bxs-user-account'></i>
+                <span>Painel do Professor</span>
+            </div>
+            <div class="sidebar-title">Dashboard</div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="dashboard.html">
+                            <i class='bx bx-user'></i>
+                            <span>Perfil</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="blog.html">
+                            <i class='bx bx-pencil'></i>
+                            <span>Blog</span>
+                            <span class="notification-badge">0</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="materiais.html">
+                            <i class='bx bx-layer'></i>
+                            <span>Materiais</span>
+                            <span class="notification-badge">0</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="agenda.html" class="active">
+                            <i class='bx bx-calendar'></i>
+                            <span>Agenda</span>
+                            <span class="notification-badge">0</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="portfolio.html">
+                            <i class='bx bx-briefcase-alt-2'></i>
+                            <span>Portfólio</span>
+                            <span class="notification-badge">0</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contato.html">
+                            <i class='bx bx-envelope'></i>
+                            <span>Contatos</span>
+                            <span class="notification-badge">0</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="sobre.html">
+                            <i class='bx bx-comment-detail'></i>
+                            <span>Comentários</span>
+                            <span class="notification-badge">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-brand">
+                Frame
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <span class="user-info">Professor</span>
+                <button class="btn btn-secondary">
+                    <i class='bx bx-log-out'></i> Sair
+                </button>
+                <button class="btn btn-primary">
+                    <i class='bx bx-pencil'></i> Ver Site
+                </button>
+            </header>
+
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <div class="calendar-title">
+                        <i class='bx bxs-calendar'></i>
+                        <h2>Agenda do Professor</h2>
+                    </div>
+                    <a href="#" class="portal-link">Visão geral do portal</a>
+                </div>
+                
+                <div class="month-display">
+                    Julho 2025
+                </div>
+
+                <div class="calendar-grid">
+                    <!-- Day Headers -->
+                    <div class="day-header">DOM</div>
+                    <div class="day-header">SEG</div>
+                    <div class="day-header">TER</div>
+                    <div class="day-header">QUA</div>
+                    <div class="day-header">QUI</div>
+                    <div class="day-header">SEX</div>
+                    <div class="day-header">SÁB</div>
+
+                    <!-- Dates -->
+                    <div class="day-cell">1</div>
+                    <div class="day-cell">2</div>
+                    <div class="day-cell">3</div>
+                    <div class="day-cell has-event">4<i class='bx bxs-pin pin-icon'></i></div>
+                    <div class="day-cell">5</div>
+                    <div class="day-cell">6</div>
+                    <div class="day-cell">7</div>
+                    <div class="day-cell">8</div>
+                    <div class="day-cell">9</div>
+                    <div class="day-cell">10</div>
+                    <div class="day-cell">11</div>
+                    <div class="day-cell">12</div>
+                    <div class="day-cell has-event">13<i class='bx bxs-pin pin-icon'></i></div>
+                    <div class="day-cell">14</div>
+                    <div class="day-cell">15</div>
+                    <div class="day-cell has-event">16<i class='bx bxs-pin pin-icon'></i></div>
+                    <div class="day-cell">17</div>
+                    <div class="day-cell has-event">18<i class='bx bxs-pin pin-icon'></i></div>
+                    <div class="day-cell">19</div>
+                    <div class="day-cell">20</div>
+                    <div class="day-cell">21</div>
+                    <div class="day-cell">22</div>
+                    <div class="day-cell">23</div>
+                    <div class="day-cell has-event">24<i class='bx bxs-pin pin-icon'></i></div>
+                    <div class="day-cell">25</div>
+                    <div class="day-cell">26</div>
+                    <div class="day-cell">27</div>
+                    <div class="day-cell">28</div>
+                    <div class="day-cell">29</div>
+                    <div class="day-cell">30</div>
+                    <div class="day-cell">31</div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

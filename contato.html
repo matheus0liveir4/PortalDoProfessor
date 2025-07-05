@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Portal do Professor</title>
+    <link rel="stylesheet" href="public/css/contato.css">
+    <!-- Boxicons CDN for icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <div class="page-container">
+        <header class="page-header">
+            <div class="logo-area">
+                <h1 class="portal-title">Portal do Professor</h1>
+            </div>
+            <div class="nav-area">
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="dashboard.html">Início</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="materiais.html" class="active">Materiais</a></li>
+                        <li><a href="agenda.html">Agenda</a></li>
+                        <li><a href="portfolio.html">Portfólio</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </nav>
+                <button class="btn btn-primary">
+                    <i class='bx bx-link'></i> Vínculo
+                </button>
+            </div>
+            <div class="sub-header">
+                <i class='bx bx-search'></i>
+                <span>Admin</span>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="contact-section">
+                <div class="section-header">
+                    <i class='bx bx-envelope'></i>
+                    <h3>Entre em Contato</h3>
+                </div>
+                <p class="section-subtitle">Tire suas dúvidas, envie sugestões ou proponha colaborações.</p>
+
+                <div class="contact-form-container">
+                    <h4>Envie uma Mensagem</h4>
+                    <p>Preencha o formulário abaixo e entrarei em contato o mais breve possível.</p>
+
+                    <form>
+                        <div class="form-group">
+                            <label for="name"><i class='bx bx-user'></i> Nome Completo *</label>
+                            <input type="text" id="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email"><i class='bx bx-envelope'></i> Email *</label>
+                            <input type="email" id="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone"><i class='bx bx-phone'></i> Telefone</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject"><i class='bx bx-purchase-tag-alt'></i> Assunto *</label>
+                            <input type="text" id="subject" placeholder="Descreva um assunto">
+                        </div>
+                        <div class="form-group">
+                            <label for="message"><i class='bx bx-message-square-dots'></i> Mensagem *</label>
+                            <textarea id="message" rows="5" placeholder="Descreva sua mensagem, dúvida ou proposta..."></textarea>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" id="newsletter">
+                            <label for="newsletter">Quero receber atualizações sobre novos conteúdos e enevelas</label>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="submit" class="btn btn-primary">
+                                <i class='bx bxl-telegram'></i> Enviar Mensagem
+                            </button>
+                            <button type="reset" class="btn btn-secondary">
+                                <i class='bx bx-revision'></i> Limpar Formulário
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="contact-info-container">
+                    <h5>Informações de Contato</h5>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <i class='bx bx-envelope-open'></i>
+                            <div>
+                                <h6>Email</h6>
+                                <p>professor@email.com</p>
+                                <p>Enviar email</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <i class='bx bx-phone-call'></i>
+                            <div>
+                                <h6>Telefone</h6>
+                                <p>(11) 9XXXX-XXXX</p>
+                                <p>Horário comercial</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <i class='bx bx-map-pin'></i>
+                            <div>
+                                <h6>Localização</h6>
+                                <p>Universidade Pessoal</p>
+                                <p>Departamento de Educação</p>
+                                <p>Sala 205, Bloco A</p>
+                            </div>
+                        </div>
+                        <div class="info-card">
+                            <i class='bx bx-time-five'></i>
+                            <div>
+                                <h6>Horário de Atendimento</h6>
+                                <p>Segunda a Sexta</p>
+                                <p>09:00 - 12:00</p>
+                                <p>14:00 - 17:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-media-container">
+                    <h6>Redes Sociais</h6>
+                    <div class="social-links">
+                        <a href="#"><i class='bx bxl-linkedin'></i> LinkedIn</a>
+                        <a href="#"><i class='bx bxl-twitter'></i> Twitter</a>
+                        <a href="#"><i class='bx bxl-facebook'></i> Facebook</a>
+                        <a href="#"><i class='bx bxl-instagram'></i> Instagram</a>
+                    </div>
+                </div>
+                
+                <div class="faq-container">
+                    <div class="section-header">
+                        <i class='bx bx-help-circle'></i>
+                        <h3>Perguntas Frequentes</h3>
+                    </div>
+                    <p class="section-subtitle">Encontre respostas para as dúvidas mais comuns.</p>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Como posso agendar uma orientação?</span>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Você pode agendar uma orientação enviando um email ou preenchendo o formulário de contato. Informe o assunto e sua disponibilidade de horários. Responderei em até 24 horas com os horários disponíveis.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                         <div class="faq-question">
+                            <span>Onde encontro os materiais das aulas?</span>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Todos os materiais estão disponíveis na seção <a href="#">Materiais</a> deste portal e também no ambiente Moodle da disciplina. Os materiais são atualizados regularmente após cada aula.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                         <div class="faq-question">
+                            <span>Como funciona o processo de orientação de TCC?</span>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                         <div class="faq-answer">
+                            <p>O processo de orientação envolve reuniões regulares, definição do cronograma de trabalho e acompanhamento das etapas de desenvolvimento. Entre em contato para elucidarmos seu projeto e verificar a disponibilidade de vagas.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Posso propor colaborações e/ou pesquisas?</span>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sim! Estou sempre aberto a colaborações acadêmicas e propostas de pesquisas. Envie uma proposta detalhada através do formulário de contato ou por email, incluindo objetivos e cronograma.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Qual o prazo de resposta para o contato?</span>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                         <div class="faq-answer">
+                            <p>Procuro responder todas as solicitações em até 24-48 horas durante dias úteis. Em períodos de alta demanda acadêmica (como início e fim de semestres), o prazo pode ser um pouco maior.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Como posso me inscrever em cursos e palestras?</span>
+                            <i class='bx bx-chevron-down'></i>
+                        </div>
+                         <div class="faq-answer">
+                            <p>Os eventos são divulgados na <a href="#">agenda</a> e no blog. As inscrições geralmente são feitas através de formulários específicos ou sistemas da universidade. Fique atento às atualizações!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="page-footer">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>Portal do Professor</h4>
+                    <p>Seu espaço de aprendizado e conhecimento.</p>
+                </div>
+                 <div class="footer-column">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#">Início</a></li>
+                        <li><a href="#">Sobre</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Materiais</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-column">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="#">Agenda</a></li>
+                        <li><a href="#">Portfólio</a></li>
+                        <li><a href="#">Contato</a></li>
+                        <li><a href="#">Modelo</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-column">
+                    <h4>Contato</h4>
+                    <p><a href="mailto:professor@email.com">professor@email.com</a></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiais de Aula - Portal do Professor</title>
+    <link rel="stylesheet" href="public/css/materiais.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="#">Portal do Professor</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="dashboard.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="materiais.html" class="active">Materiais</a></li>
+                    <li><a href="agenda.html">Agenda</a></li>
+                    <li><a href="portfolio.html">Portfólio</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-moodle">
+                    <i class="fa-solid fa-graduation-cap"></i> Moodle
+                </a>
+            </div>
+        </div>
+        <div class="sub-nav">
+            <div class="container sub-nav-container">
+                <div>
+                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <a href="#"><i class="fa-solid fa-user-shield"></i> Admin</a>
+                </div>
+                <div class="user-profile-icon">
+                    <img src="https://i.imgur.com/rS1xGj5.jpg" alt="Foto do Usuário">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- Título da Página -->
+            <div class="page-header">
+                <h1><i class="fa-solid fa-folder-open"></i> Materiais de Aula</h1>
+                <p>Acesse slides, apostilas, exercícios e outros recursos educacionais</p>
+            </div>
+
+            <!-- Filtros de Categoria -->
+            <div class="filter-tabs">
+                <a href="#" class="tab-link active" data-filter="todos">Todos</a>
+                <a href="#" class="tab-link" data-filter="slides">Slides</a>
+                <a href="#" class="tab-link" data-filter="apostilas">Apostilas</a>
+                <a href="#" class="tab-link" data-filter="exercicios">Exercícios</a>
+                <a href="#" class="tab-link" data-filter="videos">Vídeos</a>
+                <a href="#" class="tab-link" data-filter="outros">Outros</a>
+            </div>
+
+            <!-- Seção de Slides -->
+            <section class="material-section" data-category="slides">
+                <h2><i class="fa-solid fa-chalkboard-user"></i> Slides de Aula</h2>
+                <div class="material-grid">
+                    <article class="material-card">
+                        <div class="card-content">
+                            <h3>Introdução à Metodologias Ativas</h3>
+                            <p>Slides sobre conceitos fundamentais e aplicações práticas.</p>
+                            <div class="file-info">
+                                <span>PowerPoint</span><span>2.5 MB</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-actions">
+                                <a href="#" class="btn btn-download"><i class="fa-solid fa-download"></i> Download</a>
+                                <a href="#" class="btn btn-view"><i class="fa-solid fa-eye"></i> Visualizar</a>
+                            </div>
+                            <div class="card-stats">
+                                <i class="fa-solid fa-download"></i> 45
+                            </div>
+                        </div>
+                    </article>
+                    <article class="material-card">
+                        <div class="card-content">
+                            <h3>Avaliação Formativa</h3>
+                            <p>Estratégias e instrumentos de avaliação contínua.</p>
+                            <div class="file-info">
+                                <span>PowerPoint</span><span>3.1 MB</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-actions">
+                                <a href="#" class="btn btn-download"><i class="fa-solid fa-download"></i> Download</a>
+                                <a href="#" class="btn btn-view"><i class="fa-solid fa-eye"></i> Visualizar</a>
+                            </div>
+                            <div class="card-stats">
+                                <i class="fa-solid fa-download"></i> 32
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Seção de Apostilas -->
+            <section class="material-section" data-category="apostilas">
+                <h2><i class="fa-solid fa-book-open"></i> Apostilas e Textos</h2>
+                <div class="material-grid">
+                    <article class="material-card">
+                        <div class="card-content">
+                            <h3>Manual de Metodologias Ativas</h3>
+                            <p>Guia completo com teorias e práticas pedagógicas.</p>
+                            <div class="file-info">
+                                <span>PDF</span><span>5.8 MB</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                           <div class="card-actions">
+                                <a href="#" class="btn btn-download"><i class="fa-solid fa-download"></i> Download</a>
+                                <a href="#" class="btn btn-view"><i class="fa-solid fa-eye"></i> Visualizar</a>
+                            </div>
+                            <div class="card-stats">
+                                <i class="fa-solid fa-download"></i> 78
+                            </div>
+                        </div>
+                    </article>
+                    <article class="material-card">
+                         <div class="card-content">
+                            <h3>Tecnologias Educacionais</h3>
+                            <p>Integração de ferramentas digitais no ensino.</p>
+                            <div class="file-info">
+                                <span>PDF</span><span>4.2 MB</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                           <div class="card-actions">
+                                <a href="#" class="btn btn-download"><i class="fa-solid fa-download"></i> Download</a>
+                                <a href="#" class="btn btn-view"><i class="fa-solid fa-eye"></i> Visualizar</a>
+                            </div>
+                            <div class="card-stats">
+                                <i class="fa-solid fa-download"></i> 50
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Seção de Exercícios -->
+            <section class="material-section" data-category="exercicios">
+                <h2><i class="fa-solid fa-file-lines"></i> Exercícios e Atividades</h2>
+                <div class="material-grid">
+                    <article class="material-card">
+                        <div class="card-content">
+                            <h3>Lista de Exercícios - Módulo 1</h3>
+                            <p>Atividades práticas sobre fundamentos pedagógicos.</p>
+                            <div class="file-info">
+                                <span>Word</span><span>1.2 MB</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                           <div class="card-actions">
+                                <a href="#" class="btn btn-download"><i class="fa-solid fa-download"></i> Download</a>
+                                <a href="#" class="btn btn-view"><i class="fa-solid fa-eye"></i> Visualizar</a>
+                            </div>
+                            <div class="card-stats">
+                                <i class="fa-solid fa-download"></i> 89
+                            </div>
+                        </div>
+                    </article>
+                    <article class="material-card">
+                         <div class="card-content">
+                            <h3>Planilha de Avaliação</h3>
+                            <p>Template para acompanhamento de desempenho.</p>
+                            <div class="file-info">
+                                <span>Excel</span><span>0.8 MB</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                           <div class="card-actions">
+                                <a href="#" class="btn btn-download"><i class="fa-solid fa-download"></i> Download</a>
+                                <a href="#" class="btn btn-view"><i class="fa-solid fa-eye"></i> Visualizar</a>
+                            </div>
+                            <div class="card-stats">
+                                <i class="fa-solid fa-download"></i> 34
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+             <!-- Seção de Acesso Rápido -->
+            <aside class="quick-access">
+                <h2>Acesso Rápido</h2>
+                <ul>
+                    <li><a href="#"><strong>Slides</strong><span>Apresentações de aula</span></a></li>
+                    <li><a href="#"><strong>Apostilas</strong><span>Textos e manuais</span></a></li>
+                    <li><a href="#"><strong>Exercícios</strong><span>Atividades práticas</span></a></li>
+                    <li><a href="#"><strong>Vídeos</strong><span>Conteúdo audiovisual</span></a></li>
+                </ul>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-column">
+                <h4>Portal do Professor</h4>
+                <p>Seu espaço de aprendizado e conhecimento.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Materiais</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Recursos</h4>
+                <ul>
+                    <li><a href="#">Agenda</a></li>
+                    <li><a href="#">Portfólio</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Moodle</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contato</h4>
+                <p>professor@email.com</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <div class="container">
+                © 2024 Portal do Professor. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../public/js/materiais.js"></script>
+</body>
+</html>

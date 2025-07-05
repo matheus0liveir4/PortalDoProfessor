@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Projetos - Portal do Professor</title>
+    <link rel="stylesheet" href="public/css/materiais.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Cabeçalho (Reutilizado da página anterior) -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo"><a href="#">Portal do Professor</a></div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="dashboard.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="materiais.html" class="active">Materiais</a></li>
+                    <li><a href="agenda.html">Agenda</a></li>
+                    <li><a href="portfolio.html">Portfólio</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#" class="btn btn-moodle"><i class="fa-solid fa-graduation-cap"></i> Moodle</a>
+            </div>
+        </div>
+        <div class="sub-nav">
+            <div class="container sub-nav-container">
+                <div>
+                    <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+                    <a href="#"><i class="fa-solid fa-user-shield"></i> Admin</a>
+                </div>
+                <div class="user-profile-icon">
+                    <img src="https://i.imgur.com/rS1xGj5.jpg" alt="Foto do Usuário">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="portfolio-layout">
+                <!-- Coluna Esquerda: Resumo (Sticky) -->
+                <aside class="portfolio-summary">
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-flask"></i> Projetos de Pesquisa <span class="count">2</span></a></li>
+                        <li><a href="#"><i class="fa-solid fa-chalkboard-teacher"></i> Projetos de Ensino <span class="count">2</span></a></li>
+                        <li><a href="#"><i class="fa-solid fa-hands-helping"></i> Projetos de Extensão <span class="count">2</span></a></li>
+                        <li><a href="#"><i class="fa-solid fa-book-journal-whills"></i> Publicações <span class="count">5</span></a></li>
+                    </ul>
+                </aside>
+
+                <!-- Coluna Direita: Conteúdo do Portfólio -->
+                <div class="portfolio-content">
+                    <div class="page-header">
+                        <h1><i class="fa-solid fa-briefcase"></i> Portfólio de Projetos</h1>
+                        <p>Conheça os projetos de pesquisa, ensino e extensão desenvolvidos.</p>
+                    </div>
+
+                    <div class="filter-tabs">
+                        <a href="#" class="tab-link active" data-filter="todos">Todos</a>
+                        <a href="#" class="tab-link" data-filter="pesquisa">Pesquisa</a>
+                        <a href="#" class="tab-link" data-filter="ensino">Ensino</a>
+                        <a href="#" class="tab-link" data-filter="extensao">Extensão</a>
+                        <a href="#" class="tab-link" data-filter="publicacoes">Publicações</a>
+                    </div>
+
+                    <!-- Seção de Pesquisa -->
+                    <section class="project-section" data-category="pesquisa">
+                        <h2><i class="fa-solid fa-flask"></i> Projetos de Pesquisa</h2>
+                        <div class="project-list">
+                            <article class="project-item">
+                                <div class="timeline"><div class="dot"></div></div>
+                                <div class="project-details">
+                                    <a href="#" class="btn btn-details"><i class="fa-solid fa-eye"></i> Ver Detalhes</a>
+                                    <span class="status-badge status-concluido">Pesquisa Concluída</span>
+                                    <h3>Metodologias Ativas no Ensino Superior</h3>
+                                    <p>Investigação sobre a eficácia das metodologias ativas na aprendizagem de estudantes universitários.</p>
+                                    <div class="tags">
+                                        <span>Educação</span><span>Pedagogia</span><span>Pesquisa Qualitativa</span>
+                                    </div>
+                                    <div class="meta-info">
+                                        <span><i class="fa-solid fa-calendar-alt"></i> 2022 - 2024</span>
+                                        <a href="#"><i class="fa-solid fa-external-link-alt"></i></a>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="project-item">
+                                <div class="timeline"><div class="dot"></div></div>
+                                <div class="project-details">
+                                    <a href="#" class="btn btn-details"><i class="fa-solid fa-eye"></i> Ver Detalhes</a>
+                                    <span class="status-badge status-andamento">Pesquisa Em Andamento</span>
+                                    <h3>Integração de Tecnologias Digitais</h3>
+                                    <p>Estudo sobre o impacto das ferramentas digitais na educação pós-pandemia.</p>
+                                    <div class="tags">
+                                        <span>Tecnologia</span><span>Educação Digital</span><span>COVID-19</span>
+                                    </div>
+                                    <div class="meta-info">
+                                        <span><i class="fa-solid fa-calendar-alt"></i> 2023 - 2025</span>
+                                        <a href="#"><i class="fa-solid fa-external-link-alt"></i></a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <!-- Seção de Ensino -->
+                    <section class="project-section" data-category="ensino">
+                        <h2><i class="fa-solid fa-chalkboard-teacher"></i> Projetos de Ensino</h2>
+                        <div class="project-list">
+                           <article class="project-item">
+                                <div class="timeline"><div class="dot"></div></div>
+                                <div class="project-details">
+                                    <a href="#" class="btn btn-details"><i class="fa-solid fa-eye"></i> Ver Detalhes</a>
+                                    <span class="status-badge status-concluido">Ensino Concluído</span>
+                                    <h3>Curso Online: Didática Moderna</h3>
+                                    <p>Desenvolvimento de curso EAD sobre metodologias contemporâneas de ensino.</p>
+                                    <div class="tags"><span>EAD</span><span>Moodle</span><span>Videoaulas</span></div>
+                                    <div class="meta-info">
+                                        <span><i class="fa-solid fa-calendar-alt"></i> 2023</span>
+                                        <a href="#"><i class="fa-solid fa-external-link-alt"></i></a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+                    
+                    <!-- Seção de Extensão -->
+                    <section class="project-section" data-category="extensao">
+                        <h2><i class="fa-solid fa-hands-helping"></i> Projetos de Extensão</h2>
+                        <div class="project-list">
+                           <article class="project-item">
+                                <div class="timeline"><div class="dot"></div></div>
+                                <div class="project-details">
+                                    <a href="#" class="btn btn-details"><i class="fa-solid fa-eye"></i> Ver Detalhes</a>
+                                    <span class="status-badge status-andamento">Extensão Em Andamento</span>
+                                    <h3>Apoio à Comunidade Escolar</h3>
+                                    <p>Projeto de suporte pedagógico para escolas em situação de vulnerabilidade.</p>
+                                    <div class="tags"><span>Social</span><span>Voluntariado</span><span>Inclusão</span></div>
+                                    <div class="meta-info">
+                                        <span><i class="fa-solid fa-calendar-alt"></i> 2024 - 2025</span>
+                                        <a href="#"><i class="fa-solid fa-external-link-alt"></i></a>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé (Reutilizado da página anterior) -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <!-- Colunas do rodapé aqui -->
+        </div>
+        <div class="copyright">
+            <div class="container">© 2024 Portal do Professor. Todos os direitos reservados.</div>
+        </div>
+    </footer>
+
+    <script src="../public/js/portfolio.js"></script>
+</body>
+</html>

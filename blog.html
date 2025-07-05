@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Professor - Blog</title>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/blog.css">
+
+    <!-- Font Awesome (para os ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
+</head>
+<body>
+
+    <div class="container">
+        <!-- ======================= Sidebar (Menu "Blog" está ativo) ======================= -->
+        <aside class="sidebar">
+            <div>
+                <h2 class="sidebar-title">
+                    <i class="fas fa-user-tie"></i>
+                    <span>Painel do Professor</span>
+                </h2>
+                
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li><a href="dashboard.html"><i class="fas fa-tachometer-alt nav-icon"></i> <span>Dashboard</span></a></li>
+                        <li><a href="perfil.html"><i class="fas fa-user nav-icon"></i> <span>Perfil</span></a></li>
+                        <li><a href="blog.html" class="active"><i class="fas fa-blog nav-icon"></i> <span>Blog</span> <span class="notification-badge">0</span></a></li>
+                        <li><a href="materiais.html"><i class="fas fa-folder nav-icon"></i> <span>Materiais</span> <span class="notification-badge">0</span></a></li>
+                        <li><a href="agenda.html"><i class="fas fa-calendar-alt nav-icon"></i> <span>Agenda</span> <span class="notification-badge">0</span></a></li>
+                        <li><a href="portfolio.html"><i class="fas fa-briefcase nav-icon"></i> <span>Portfólio</span> <span class="notification-badge">0</span></a></li>
+                        <li><a href="contato.html"><i class="fas fa-envelope nav-icon"></i> <span>Contatos</span> <span class="notification-badge">0</span></a></li>
+                        <li><a href="sobre.html"><i class="fas fa-comments nav-icon"></i> <span>Comentários</span> <span class="notification-badge">0</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- ======================= Conteúdo Principal ======================= -->
+        <div class="main-wrapper">
+            <header class="main-header">
+                <h1 class="page-title">
+                    <i class="fas fa-blog"></i>
+                    <span>Blog</span>
+                </h1>
+                <div class="header-actions">
+                    <span class="user-info">Professor</span>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-sign-out-alt"></i> Sair
+                    </a>
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-edit"></i> Ver Site
+                    </a>
+                </div>
+            </header>
+
+            <main class="main-content">
+                <!-- Seção Superior: Vídeo e Anúncios -->
+                <section class="content-section">
+                    <div class="blog-grid-top">
+                        <div class="video-card">
+                            <h3><i class="fas fa-thumbtack"></i> Sugestão de Vídeo:</h3>
+                            <div class="video-player-placeholder" title="Clique para reproduzir"></div>
+                        </div>
+                        <div class="announcements-column">
+                            <a href="#" class="resource-card">
+                                <i class="fas fa-pencil-alt"></i>
+                                <span><strong>Atividade Prática</strong> - "Redesenhe uma tela de cadastro com foco em feedback do sistema e consistência visual."</span>
+                            </a>
+                            <a href="#" class="resource-card">
+                                <i class="fas fa-lightbulb"></i>
+                                <span><strong>Estudo de Caso</strong> - "O que torna a interface do Nubank tão intuitiva? Veja nosso estudo de caso."</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Seção Inferior: Links de Recursos -->
+                <section class="content-section">
+                    <div class="resource-links-grid">
+                        <a href="#" class="resource-card">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>PDF: Slides da aula ou checklist de usabilidade</span>
+                        </a>
+                        <a href="#" class="resource-card">
+                            <i class="fas fa-link"></i>
+                            <span>Link para Figma, Adobe XD ou Balsamiq</span>
+                        </a>
+                        <a href="#" class="resource-card">
+                            <i class="fas fa-book-open"></i>
+                            <span>Biblioteca de Componentes UI</span>
+                        </a>
+                        <a href="#" class="resource-card">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Exemplos de UI Mobile Responsiva</span>
+                        </a>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+</body>
+</html>

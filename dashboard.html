@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Professor - Dashboard</title>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/dashboard.css">
+    <!-- Font Awesome (para os ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
+</head>
+<body>
+
+    <div class="container">
+        <!-- ======================= Sidebar ======================= -->
+        <aside class="sidebar">
+            <div>
+                <h2 class="sidebar-title">
+                    <i class="fas fa-user-tie"></i>
+                    <span>Painel do Professor</span>
+                </h2>
+                
+                <nav class="sidebar-nav">
+                    <ul>
+                        <li><a href="dashboard.html" class="active"><i class="fas fa-tachometer-alt nav-icon"></i> <span>Dashboard</span></a></li>
+                        <li><a href="perfil.html"><i class="fas fa-user nav-icon"></i> <span>Perfil</span></a></li>
+                        <li><a href="blog.html"><i class="fas fa-blog nav-icon"></i> <span>Blog</span> <span class="notification-badge">0</span></a></li>
+                        <li><a href="materiais.html"><i class="fas fa-folder nav-icon"></i> <span>Materiais</span> <span class="notification-badge">0</span></a></li>
+                        <li><a href="agenda.html"><i class="fas fa-calendar-alt nav-icon"></i> <span>Agenda</span> <span class="notification-badge">0</span></a></li>
+                        <li><a href="portfolio.html"><i class="fas fa-briefcase nav-icon"></i> <span>Portfólio</span> <span class="notification-badge">0</span></a></li>
+                        <li><a href="contato.html"><i class="fas fa-envelope nav-icon"></i> <span>Contatos</span> <span class="notification-badge">0</span></a></li>
+                        <li><a href="sobre.html"><i class="fas fa-comments nav-icon"></i> <span>Comentários</span> <span class="notification-badge">0</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+        <!-- ======================= Conteúdo Principal ======================= -->
+        <div class="main-wrapper">
+            <header class="main-header">
+                <div class="header-actions">
+                    <span class="user-info">Professor</span>
+                    <a href="#" class="btn btn-secondary">
+                        <i class="fas fa-sign-out-alt"></i> Sair
+                    </a>
+                    <a href="#" class="btn btn-primary">
+                        <i class="fas fa-edit"></i> Ver Site
+                    </a>
+                </div>
+            </header>
+
+            <main class="main-content">
+                <div class="dashboard-header">
+                    <h1>Dashboard</h1>
+                    <a href="#" class="portal-link">Visão geral do portal</a>
+                </div>
+                
+                <!-- Cartões de Estatísticas -->
+                <div class="stats-cards">
+                    <div class="card">
+                        <div class="card-icon bg-purple">
+                            <i class="fas fa-blog"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-number">0</span>
+                            <span class="card-label">Posts do Blog</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon bg-pink">
+                            <i class="fas fa-folder"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-number">0</span>
+                            <span class="card-label">Materiais</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon bg-blue">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-number">0</span>
+                            <span class="card-label">Eventos</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon bg-green">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-number">0</span>
+                            <span class="card-label">Projetos</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon bg-red">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-number">0</span>
+                            <span class="card-label">Mensagens</span>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon bg-cyan">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-number">0</span>
+                            <span class="card-label">Comentários</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Atividade Recente -->
+                <div class="recent-activity">
+                    <h2>Atividade Recente</h2>
+                    <div class="activity-content">
+                        <!-- Conteúdo da atividade recente viria aqui -->
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+</body>
+</html>

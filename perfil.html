@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Professor - Perfil</title>
+    <link rel="stylesheet" href="public/css/perfil.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <!-- ... (código da sidebar permanece o mesmo) ... -->
+        <div class="sidebar-header">
+            <i class="fa-solid fa-school"></i>
+            <h1>Painel do Professor</h1>
+        </div>
+        <nav class="sidebar-nav">
+            <p>Dashboard</p>
+            <ul>
+                <li><a href="dashboard.html" class="active"><i class="fa-solid fa-user"></i> Perfil</a></li>
+                <li><a href="blog.html"><i class="fa-solid fa-blog"></i> Blog <span class="badge">0</span></a></li>
+                <li><a href="materiais.html"><i class="fa-solid fa-book"></i> Materiais <span class="badge">0</span></a></li>
+                <li><a href="agenda.html"><i class="fa-solid fa-calendar-days"></i> Agenda <span class="badge">0</span></a></li>
+                <li><a href="portfolio.html"><i class="fa-solid fa-briefcase"></i> Portfólio <span class="badge">0</span></a></li>
+                <li><a href="contato.html"><i class="fa-solid fa-envelope"></i> Contatos <span class="badge">0</span></a></li>
+                <li><a href="sobre.html"><i class="fa-solid fa-comments"></i> Comentários <span class="badge">0</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="main-content">
+        <header class="top-bar">
+             <!-- ... (código do header permanece o mesmo) ... -->
+            <div class="user-info">Professor</div>
+            <div class="header-actions">
+                <button class="btn btn-secondary"><i class="fa-solid fa-right-from-bracket"></i> Sair</button>
+                <button class="btn btn-primary"><i class="fa-solid fa-eye"></i> Ver Site</button>
+            </div>
+        </header>
+
+        <main class="content-area">
+            <div class="profile-card">
+                <div class="card-header">
+                    <h2>Perfil</h2>
+                    <a href="#">Visão geral do portal</a>
+                </div>
+                
+                <div class="card-body">
+                    <div class="profile-left">
+                        <div class="profile-picture">
+                            <img src="https://i.imgur.com/rS1xGj5.jpg" alt="Foto de Perfil">
+                        </div>
+                        <section class="contact-info">
+                            <h3>Informações de Contato</h3>
+                            <label for="bio">Mini-Biografia</label>
+                            <!-- ALTERADO: de div para textarea -->
+                            <textarea id="bio" name="bio" class="profile-input" placeholder="Escreva uma breve biografia..." disabled></textarea>
+                        </section>
+                    </div>
+
+                    <div class="profile-right">
+                        <!-- Botão de edição agora tem um ID para ser encontrado pelo JS -->
+                        <button class="btn btn-primary edit-button" id="toggleEditButton"><i class="fa-solid fa-pencil"></i> Editar Perfil</button>
+                        
+                        <section class="basic-info">
+                            <h3>Informações Básicas</h3>
+                            <div class="info-field">
+                                <label for="nome">Nome Completo</label>
+                                <!-- ALTERADO: de div para input -->
+                                <input type="text" id="nome" name="nome" class="profile-input" value="Ridis Pereira Ribeiro" disabled>
+                            </div>
+                            <div class="info-field">
+                                <label for="cargo">Título / Cargo</label>
+                                <!-- ALTERADO: de div para input -->
+                                <input type="text" id="cargo" name="cargo" class="profile-input" value="Professor" disabled>
+                            </div>
+                            <div class="info-field">
+                                <label for="email">Email de Contato</label>
+                                <!-- ALTERADO: de div para input -->
+                                <input type="email" id="email" name="email" class="profile-input" value="RidisPereiraRibeiro@gmail.com" disabled>
+                            </div>
+                        </section>
+
+                        <section class="social-media">
+                            <h3>Redes Sociais</h3>
+                            <div class="social-grid">
+                                <div class="info-field">
+                                    <label for="linkedin1">LinkedIn</label>
+                                    <!-- ALTERADO: de div para input -->
+                                    <input type="url" id="linkedin1" name="linkedin1" class="profile-input" placeholder="https://linkedin.com/in/..." disabled>
+                                </div>
+                                <div class="info-field">
+                                    <label for="github">Github</label>
+                                    <!-- ALTERADO: de div para input -->
+                                    <input type="url" id="github" name="github" class="profile-input" placeholder="https://github.com/..." disabled>
+                                </div>
+                                <div class="info-field">
+                                    <label for="lattes">Lattes</label> <!-- Exemplo de outra rede -->
+                                    <!-- ALTERADO: de div para input -->
+                                    <input type="url" id="lattes" name="lattes" class="profile-input" placeholder="http://lattes.cnpq.br/..." disabled>
+                                </div>
+                                <div class="info-field">
+                                    <label for="website">Website</label> <!-- Exemplo de outra rede -->
+                                    <!-- ALTERADO: de div para input -->
+                                    <input type="url" id="website" name="website" class="profile-input" placeholder="https://seu-site.com" disabled>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../public/js/perfil.js"></script>
+</body>
+</html>
